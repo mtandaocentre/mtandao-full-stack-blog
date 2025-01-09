@@ -5,8 +5,12 @@ const Navbar = () => {
         
         {/* Add logo */}
         {/* Add styling to logo */}
-        <div className="flex items-center gap-4">
-            <img src="/mtandao-logo.png" className="w-10 h-10" alt="Mtandao Logo" />
+        {/* Add text span and style it */}
+        <div className="flex items-center gap-4 text-2xl font-bold">
+            <img src="/mtandao-logo.png" className="w-12 h-12" 
+                alt="Mtandao Logo" 
+            />
+            <span>mtandao centre</span>
         </div>
 
         {/*Add responsivenes for mobile screen*/}
