@@ -1,6 +1,7 @@
 const Navbar = () => {
   return (
-    <div className=''>
+    /* Format the Navbar container */
+    <div className='w-full h-16 md:h-20 flex items-center justify-between'>
         
         {/* Add logo */}
         <div className="">
