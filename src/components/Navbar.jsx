@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="md:hidden">Mobile Screen</div>
 
           {/*Add responsivenes for desktop screens*/}
-          <div className="hidden md:flex">Mobile Screen</div>
+          <div className="hidden md:flex">Desktop Screen</div>
 
         {/**/}
     </div>
