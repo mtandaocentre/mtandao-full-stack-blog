@@ -4,7 +4,8 @@ const Navbar = () => {
     <div className='w-full h-16 md:h-20 flex items-center justify-between'>
         
         {/* Add logo */}
-        <div className="">
+        {/* Add styling to logo */}
+        <div className="flex items-center gap-4">
             <img src="/mtandao-logo.png" className="w-10 h-10" alt="Mtandao Logo" />
         </div>
 
