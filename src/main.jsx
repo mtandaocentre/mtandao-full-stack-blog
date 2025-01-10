@@ -13,6 +13,14 @@ import LoginPage from './routes/LoginPage.jsx'
 import RegisterPage from './routes/RegisterPage.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
 
+
+// Import your Publishable Key with error handler
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error('Add your Clerk Publishable Key to the .env.local file')
+}
+
 // create router
 // Add routes
 // Add navbar to all pages using MainLayout
