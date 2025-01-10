@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path:"about",
-    element: <div>About</div>v
+    element: <div>About</div>
   },
 ]);
 
