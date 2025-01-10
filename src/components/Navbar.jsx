@@ -37,11 +37,13 @@ const Navbar = () => {
           {/* MOBILE LINK LIST */}
           {/* - Add styling to mobile link list
               - Add animation to mobile link list 
+              - Add transition and speed to animation
           */}
           <div 
             className={`w-full h-screen flex flex-col 
             items-center justify-center absolute top-16
-            bg-[#e0e0e0] text-[#1b1c1c]
+            bg-[#e0e0e0] text-[#1b1c1c] transition-all
+            ease-in-out
             ${ open ? "-right-0" : "-right-[100%]"}`
           } 
           >
