@@ -50,6 +50,7 @@ const Navbar = () => {
               - Add animation to mobile link list 
               - Add transition and speed to animation
               - Added and styled links
+              - Change mobile links from anchor tags to Links 
           */}
           <div 
             className={`w-full h-screen flex flex-col 
@@ -59,17 +60,17 @@ const Navbar = () => {
             ${ open ? "-right-0" : "-right-[100%]"}`
           } 
           >
-            <a href="/">Home</a>
-            <a href="/">Trending</a>
-            <a href="/">Most Popular</a>
-            <a href="/">About</a>
-            <a href="/">
+            <Link to="/">Home</Link>
+            <Link to="/">Trending</Link>
+            <Link to="/">Most Popular</Link>
+            <Link to="/">About</Link>
+            <Link to="/">
               <button 
                 className="py-2 px-4 rounded-3xl bg-[#1b1c1c] text-[#e0e0e0]"
               >
               Login x
               </button>
-            </a>
+            </Link>
           </div>
 
         </div>
