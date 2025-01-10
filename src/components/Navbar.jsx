@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const Navbar = () => {
-  /*Create useState hook to handle the opening na d closing of
+  /*Create useState hook to handle the opening and closing of
   mobile menu*/
   const [open, setOpen] = useState(false);
   return (
@@ -18,11 +18,19 @@ const Navbar = () => {
             <span>mtandao centre</span>
         </div>
 
+        {/*MOBILE*/}
         {/*Add responsivenes for mobile screen*/}
-        <div className="md:hidden">Mobile Screen</div>
+        <div className="md:hidden">
 
-          {/*Add responsivenes for desktop screens*/}
-          <div className="hidden md:flex">Desktop Screen</div>
+          {/*Create an opening and closing button for the mobile menu*/}
+          <div className="cursor-pointer text-4xl">
+            {open ? "X" : "="}
+          </div>
+        </div>
+
+        {/*DESKTOP*/}
+        {/*Add responsivenes for desktop screens*/}
+        <div className="hidden md:flex">Desktop Screen</div>
 
         {/**/}
     </div>
