@@ -1,12 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import { 
   createBrowserRouter,
-  routerProvider,
-  Route,
-  Link 
+  RouterProvider
 } from 'react-router-dom'
 import HomePage from './routes/HomePage.jsx'
 import PostListPage from './routes/PostListPage.jsx'
@@ -29,7 +26,7 @@ const router = createBrowserRouter([
     element: <PostListPage />
   },
   {
-    path:"/slug",
+    path:"/:slug",
     element: <SinglePostPage />
   },
   {
@@ -46,8 +43,9 @@ const router = createBrowserRouter([
   },
 ]);
 
+// Wrap app with RouterProvider and parse router
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>,
 )
