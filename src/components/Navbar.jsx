@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { IKImage } from 'imagekitio-react';
 
 const Navbar = () => {
   /*Create useState hook to handle the opening and closing of
@@ -9,11 +10,17 @@ const Navbar = () => {
     <div className='w-full h-16 md:h-20 flex items-center justify-between'>
         
         {/* Add logo */}
-        {/* Add styling to logo */}
-        {/* Add text span and style it */}
+        {/* - Add styling to logo  
+            - Add text span and style it 
+            - Source image from imagekit CDN
+        */}
         <div className="flex items-center gap-4 text-2xl font-bold">
-            <img src="/mtandao-logo.png" className="w-12 h-12" 
-                alt="Mtandao Logo" 
+            <IKImage 
+              urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
+              //path="/mtandao-logo.png" 
+              src="https://ik.imagekit.io/mtandaocentre/mtandao-logo.png"
+              className="w-12 h-12" 
+              alt="Mtandao Logo" 
             />
             <span>mtandao centre</span>
         </div>
