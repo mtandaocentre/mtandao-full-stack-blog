@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "./Image";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   /*Create useState hook to handle the opening and closing of
@@ -14,8 +15,11 @@ const Navbar = () => {
             - Add text span and style it 
             - Source image from imagekit CDN
             - Change image source to Image component 
+            - Give logo and title a link leading to home page
         */}
-        <div className="flex items-center gap-4 text-2xl font-bold">
+        <Link to="/" 
+          className="flex items-center gap-4 text-2xl font-bold"
+        >
             <Image 
               src="mtandao-logo.png" 
               alt="Mtandao logo" 
@@ -23,7 +27,7 @@ const Navbar = () => {
               h={32} 
             />       
             <span>mtandao centre</span>
-        </div>
+        </Link>
 
         {/*MOBILE*/}
         {/*Add responsivenes for mobile screen*/}
