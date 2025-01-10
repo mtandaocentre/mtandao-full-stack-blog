@@ -12,6 +12,7 @@ import WritePage from './routes/WritePage.jsx'
 import LoginPage from './routes/LoginPage.jsx'
 import RegisterPage from './routes/RegisterPage.jsx'
 import MainLayout from './layouts/MainLayout.jsx'
+import { ClerkProvider } from '@clerk/clerk-react'
 
 
 // Import your Publishable Key with error handler
@@ -57,8 +58,11 @@ const router = createBrowserRouter([
 ]);
 
 // Wrap app with RouterProvider and parse router
+// Wrap application with clerk provider
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <ClerkProvider publishableKey='PUBLISHABLE_KEY'>
+      <RouterProvider router={router} />
+    </ClerkProvider> 
   </StrictMode>,
 )
