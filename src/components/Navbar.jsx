@@ -22,6 +22,7 @@ const Navbar = () => {
         {/*Add responsivenes for mobile screen*/}
         <div className="md:hidden">
 
+          {/* MOBILE BUTTON */}
           {/* 
               - Create an opening and closing button for the mobile menu
               - Add onClick functionality  
@@ -32,6 +33,17 @@ const Navbar = () => {
           }>
             {open ? "X" : "=" }
           </div>
+
+          {/* MOBILE LINK LIST */}
+          {/* Add styling to mobile link list */}
+          <div 
+            className="w-full h-screen flex flex-col 
+            items-center justify-center absolute top-16
+            bg-[#e0e0e0] text-[#1b1c1c]" 
+          >
+            Menu
+          </div>
+
         </div>
 
         {/*DESKTOP*/}
