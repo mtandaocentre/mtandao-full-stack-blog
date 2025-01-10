@@ -22,9 +22,15 @@ const Navbar = () => {
         {/*Add responsivenes for mobile screen*/}
         <div className="md:hidden">
 
-          {/*Create an opening and closing button for the mobile menu*/}
-          <div className="cursor-pointer text-4xl">
-            {open ? "X" : "="}
+          {/* 
+              - Create an opening and closing button for the mobile menu
+              - Add onClick functionality  
+          */}
+          <div 
+            className="cursor-pointer text-4xl" 
+            onClick={()=>setOpen((prev)=>!prev)
+          }>
+            {open ? "X" : "=" }
           </div>
         </div>
 
