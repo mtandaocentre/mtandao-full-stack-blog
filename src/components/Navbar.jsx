@@ -1,4 +1,9 @@
+import { useState } from "react"
+
 const Navbar = () => {
+  /*Create useState hook to handle the opening na d closing of
+  mobile menu*/
+  const [open, setOpen] = useState(false);
   return (
     /* Format the Navbar container */
     <div className='w-full h-16 md:h-20 flex items-center justify-between'>
