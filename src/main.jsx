@@ -11,36 +11,41 @@ import SinglePostPage from './routes/SinglePostPage.jsx'
 import WritePage from './routes/WritePage.jsx'
 import LoginPage from './routes/LoginPage.jsx'
 import RegisterPage from './routes/RegisterPage.jsx'
+import MainLayout from './layouts/MainLayout.jsx'
 
 // create router
 // Add routes
+// Add navbar to all pages using MainLayout
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: (
-      <HomePage />
-    ),
-  },
-  {
-    path:"/posts",
-    element: <PostListPage />
-  },
-  {
-    path:"/:slug",
-    element: <SinglePostPage />
-  },
-  {
-    path:"/write",
-    element: <WritePage />
-  },
-  {
-    path:"/login",
-    element: <LoginPage />
-  },
-  {
-    path:"/register",
-    element: <RegisterPage />
-  },
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path:"/posts",
+        element: <PostListPage />
+      },
+      {
+        path:"/:slug",
+        element: <SinglePostPage />
+      },
+      {
+        path:"/write",
+        element: <WritePage />
+      },
+      {
+        path:"/login",
+        element: <LoginPage />
+      },
+      {
+        path:"/register",
+        element: <RegisterPage />
+      },
+    ]
+  }
 ]);
 
 // Wrap app with RouterProvider and parse router
