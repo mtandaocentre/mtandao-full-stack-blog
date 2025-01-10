@@ -1,13 +1,18 @@
 import { IKImage } from "imagekitio-react"
 
-const Image = () => {
+// Make image component a prop
+const Image = (src, className, w, h, alt) => {
   return (
     <IKImage 
         urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
-        //path="/mtandao-logo.png" 
+        path={src} 
         src="https://ik.imagekit.io/mtandaocentre/mtandao-logo.png"
-        className="w-12 h-12" 
-        alt="Mtandao Logo" 
+        className={className} 
+        loading="lazy"
+        lqip={{ active: true, quality: 20 }}
+        alt={alt} 
+        width={w}
+        height={h}
     />
   )
 }
