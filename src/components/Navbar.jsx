@@ -52,11 +52,24 @@ const Navbar = () => {
 
         </div>
 
-        {/*DESKTOP*/}
-        {/*Add responsivenes for desktop screens*/}
-        <div className="hidden md:flex">Desktop Screen</div>
+        {/* DESKTOP */}
+        {/* - Add responsivenes for desktop screens
+            - Add Navbar links
+        */}
+        <div className="hidden md:flex gap-8 xl:gap-12 font-medium">
+          <a href="/">Home</a>
+          <a href="/">Trending</a>
+          <a href="/">Most Popular</a>
+          <a href="/">About</a>
+          <a href="/">
+            <button 
+              className="py-2 px-4 rounded-3xl bg-[#e0e0e0] text-[#1b1c1c]"
+            >
+              Login
+            </button>
+          </a>
+        </div>
 
-        {/**/}
     </div>
   )
 }
