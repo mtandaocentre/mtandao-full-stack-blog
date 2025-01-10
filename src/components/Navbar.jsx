@@ -38,16 +38,27 @@ const Navbar = () => {
           {/* - Add styling to mobile link list
               - Add animation to mobile link list 
               - Add transition and speed to animation
+              - Added and styled links
           */}
           <div 
             className={`w-full h-screen flex flex-col 
-            items-center justify-center absolute top-16
-            bg-[#e0e0e0] text-[#1b1c1c] transition-all
-            ease-in-out
+            items-center justify-center gap-8 font-medium 
+            text-lg absolute top-16 bg-[#e0e0e0] text-[#1b1c1c] 
+            transition-all ease-in-out
             ${ open ? "-right-0" : "-right-[100%]"}`
           } 
           >
-            Menu
+            <a href="/">Home</a>
+            <a href="/">Trending</a>
+            <a href="/">Most Popular</a>
+            <a href="/">About</a>
+            <a href="/">
+              <button 
+                className="py-2 px-4 rounded-3xl bg-[#1b1c1c] text-[#e0e0e0]"
+              >
+              Login x
+              </button>
+            </a>
           </div>
 
         </div>
@@ -65,7 +76,7 @@ const Navbar = () => {
             <button 
               className="py-2 px-4 rounded-3xl bg-[#e0e0e0] text-[#1b1c1c]"
             >
-              Login
+              Login x
             </button>
           </a>
         </div>
