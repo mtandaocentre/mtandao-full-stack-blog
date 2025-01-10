@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IKImage } from 'imagekitio-react';
+import Image from "./Image";
 
 const Navbar = () => {
   /*Create useState hook to handle the opening and closing of
@@ -13,15 +13,15 @@ const Navbar = () => {
         {/* - Add styling to logo  
             - Add text span and style it 
             - Source image from imagekit CDN
+            - Change image source to Image component 
         */}
         <div className="flex items-center gap-4 text-2xl font-bold">
-            <IKImage 
-              urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
-              //path="/mtandao-logo.png" 
-              src="https://ik.imagekit.io/mtandaocentre/mtandao-logo.png"
-              className="w-12 h-12" 
-              alt="Mtandao Logo" 
-            />
+            <Image 
+              src="mtandao-logo.png" 
+              alt="Mtandao logo" 
+              w={32} 
+              h={32} 
+            />       
             <span>mtandao centre</span>
         </div>
 
