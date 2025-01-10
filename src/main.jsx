@@ -59,6 +59,7 @@ const router = createBrowserRouter([
 
 // Wrap app with RouterProvider and parse router
 // Wrap application with clerk provider
+// Add publishable key
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
