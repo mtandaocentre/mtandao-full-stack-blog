@@ -1,12 +1,21 @@
+import { Link } from "react-router-dom"
+
 const HomePage = () => {
   return (
     /* Style home page */
     <div className='mt-4 flex flex-col gap-4'>
       
-        {/* BREADCRUMB */}
-        {/* INTRODUCTION */}
-        {/* FEATURED POSTS */}
-        {/* POST LIST */}
+      {/* BREADCRUMB */}
+      {/* Create and style Breadcrumb secrion */}
+        <div className="flex gap-4 text-[#e0e0e0]">
+          <Link to="/" className="font-bold">Home</Link>
+          <span>•</span>
+          <span>Blogs and Articles</span>
+        </div>
+
+      {/* INTRODUCTION */}
+      {/* FEATURED POSTS */}
+      {/* POST LIST */}
     </div>
   )
 }
