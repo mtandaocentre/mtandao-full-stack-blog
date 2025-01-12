@@ -18,7 +18,18 @@ const HomePage = () => {
       <div className="flex items-centre justify-between">
         
         {/* titles */}
-        <div></div>
+        {/* Create and style titles section */}
+        <div>
+          <h1 
+            className="text-[#e0e0e0] text-2xl md:text-5xl
+            lg:text-6xl font-bold"
+          >
+            Your Online Place for Everything Computers.
+          </h1>
+          <p className="mt-8 text-md md:text-xl">
+            Your Online Place for Everything Computers.
+          </p>
+        </div>
 
         {/* Animated Button */}
         <div></div>
