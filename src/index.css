@@ -10,3 +10,8 @@ body{
     overflow-x: hidden;
     font-family: Montserrat,sans-serif
 }
+
+/* Animation class */
+.animatedButton{
+    animation-duration: 10000ms;
+}
