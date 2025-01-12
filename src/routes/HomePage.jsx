@@ -7,13 +7,22 @@ const HomePage = () => {
       
       {/* BREADCRUMB */}
       {/* Create and style Breadcrumb secrion */}
-        <div className="flex gap-4 text-[#e0e0e0]">
-          <Link to="/" className="font-bold">Home</Link>
-          <span>•</span>
-          <span>Blogs and Articles</span>
-        </div>
+      <div className="flex gap-4 text-[#e0e0e0]">
+        <Link to="/" className="font-bold">Home</Link>
+        <span>•</span>
+        <span>Blogs and Articles</span>
+      </div>
 
       {/* INTRODUCTION */}
+      {/* Create and style introduction section */}
+      <div className="flex items-centre justify-between">
+        
+        {/* titles */}
+        <div></div>
+
+        {/* Animated Button */}
+        <div></div>
+      </div>
       {/* FEATURED POSTS */}
       {/* POST LIST */}
     </div>
