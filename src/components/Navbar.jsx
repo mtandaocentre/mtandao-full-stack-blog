@@ -80,8 +80,9 @@ const Navbar = () => {
         {/* - Add responsivenes for desktop screens
             - Add Navbar links
             - Change desktop links from anchor tags to Links 
+            - Change font to bold
         */}
-        <div className="hidden md:flex gap-8 xl:gap-12 font-medium">
+        <div className="hidden md:flex gap-8 xl:gap-12 font-bold">
           <Link to="/">Home</Link>
           <Link to="/">Trending</Link>
           <Link to="/">Most Popular</Link>
