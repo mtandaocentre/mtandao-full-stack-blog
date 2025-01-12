@@ -1,6 +1,13 @@
 const HomePage = () => {
   return (
-    <div className=''>HomePage</div>
+    /* Style home page */
+    <div className='mt-4 flex flex-col gap-4'>
+      
+        {/* BREADCRUMB */}
+        {/* INTRODUCTION */}
+        {/* FEATURED POSTS */}
+        {/* POST LIST */}
+    </div>
   )
 }
 
