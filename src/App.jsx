@@ -8,6 +8,10 @@ const App = () => {
     >
       {/* Render Navbar component in the main app */}
       <Navbar />
+      {/* BREADCRUMB */}
+      {/* INTRODUCTION */}
+      {/* FEATURED POSTS */}
+      {/* POST LIST */}
     </div>
   )
 }
