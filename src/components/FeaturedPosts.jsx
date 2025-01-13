@@ -1,4 +1,5 @@
 import Image from "./Image"
+import { Link } from "react-router-dom"
 
 const FeaturedPosts = () => {
   return (
@@ -14,6 +15,13 @@ const FeaturedPosts = () => {
         <Image src="featured1.jpeg" className="rounded-3xl object-cover" />
 
         {/* Details */}
+        {/* Add detail section */}
+        <div className="flex items-center gap-4">
+            <h1 className="font-bold lg:text-lg">01.</h1>
+            <Link className=" font-semibold text-[#e0e0e0] lg:text-lg">Hardware</Link>
+            <span className="text-[#e0e0e0] font-medium">2 days ago</span>
+        </div>
+
         {/* Title */}
         </div>
 
