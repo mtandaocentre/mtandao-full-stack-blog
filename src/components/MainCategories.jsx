@@ -52,6 +52,10 @@ const MainCategories = () => {
                 Distributed Systems
             </Link>
         </div>
+
+        {/* Add seperater */}
+        <span className="text-xl font-medium">|</span>
+
         {/* Search */}
         <div className="">Search</div>
     </div>
