@@ -32,8 +32,10 @@ const HomePage = () => {
         </div>
 
         {/* Animated Button */}
-        {/* Create and style animation button */}
-        <Link to="write" className="relative">
+        {/* - Create and style animation button
+            - Create responsiveness for the write button 
+        */}
+        <Link to="write" className="hidden md:block relative">
 
         {/* SVG on which text will seat on */}
         <svg
