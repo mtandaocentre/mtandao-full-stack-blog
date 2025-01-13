@@ -57,7 +57,9 @@ const MainCategories = () => {
         <span className="text-xl font-medium">|</span>
 
         {/* Search */}
-        {/* Add and style serch bar */}
+        {/* - Add and style serch bar 
+            - Changed stroke color
+        */}
         <div 
             className="bg-[#e0e0e0] p-2 rounded-full flex items-center 
             gap-2"
@@ -68,7 +70,7 @@ const MainCategories = () => {
                 width="20"
                 height="20"
                 fill="none"
-                stroke="#0a0a0a"
+                stroke="#0f0f0f"
             >
                 <circle cx="10.5" cy="10.5" r="7.5" />
                 <line x1="16.5" y1="16.5" x2="22" y2="22"/>
