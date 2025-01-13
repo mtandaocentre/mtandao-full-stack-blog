@@ -11,8 +11,10 @@ const FeaturedPosts = () => {
         <div className="w-full lg:w-1/2 flex flex-col gap-4">
         
         {/* Image */}
-        {/* Add and style image component */}
-        <Image src="featured1.jpeg" className="rounded-3xl object-cover" />
+        {/* - Add and style image component 
+            - Rename image src
+        */}
+        <Image src="featured0.jpeg" className="rounded-3xl object-cover" />
 
         {/* Details */}
         {/* Add and style detail section */}
