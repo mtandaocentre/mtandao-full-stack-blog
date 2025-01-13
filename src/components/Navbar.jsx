@@ -43,7 +43,8 @@ const Navbar = () => {
             className="cursor-pointer text-4xl" 
             onClick={()=>setOpen((prev)=>!prev)
           }>
-            {open ? "X" : "=" }
+            {/* Added triple bar */}
+            {open ? "X" : "≡" }
           </div>
 
           {/* MOBILE LINK LIST */}
