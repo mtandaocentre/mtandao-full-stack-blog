@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import MainCategories from "../components/MainCategories";
 
 const HomePage = () => {
   return (
@@ -90,6 +91,11 @@ const HomePage = () => {
         </button>
         </Link>
       </div>
+
+      {/* CATEGORIES */}
+      {/* Add main categories component to home page */}
+      <MainCategories />
+
       {/* FEATURED POSTS */}
       {/* POST LIST */}
     </div>
