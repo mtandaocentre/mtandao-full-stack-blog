@@ -22,6 +22,35 @@ const MainCategories = () => {
             >
                 All Posts
             </Link>
+
+            {/* Creat and style all other categories */}
+            <Link to="/posts?cat=hardware" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Hardware
+            </Link>
+
+            <Link to="/posts?cat=software" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Software
+            </Link>
+
+            <Link to="/posts?cat=networks" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Networks
+            </Link>
+
+            <Link to="/posts?cat=distributed-systems" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Distributed Systems
+            </Link>
         </div>
         {/* Search */}
         <div className="">Search</div>
