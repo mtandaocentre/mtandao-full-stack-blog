@@ -82,7 +82,7 @@ const FeaturedPosts = () => {
             className=" flex items-center gap-4 text-sm lg:text-base mb-4"
           >
             <h1 className="font-bold">03.</h1>
-            <Link className="text-[#e0e0e0] font-semibold">Software</Link>
+            <Link className="text-[#e0e0e0] font-semibold">Networks</Link>
             <span className="text-[#e0e0e0] text-sm font-medium">2 days ago</span>
           </div>
 
@@ -111,7 +111,7 @@ const FeaturedPosts = () => {
               className=" flex items-center gap-4 text-sm lg:text-base mb-4"
             >
               <h1 className="font-bold">04.</h1>
-              <Link className="text-[#e0e0e0] font-semibold">Software</Link>
+              <Link className="text-[#e0e0e0] font-semibold">Distribute Systems</Link>
               <span className="text-[#e0e0e0] text-sm font-medium">2 days ago</span>
             </div>
           
