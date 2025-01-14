@@ -13,8 +13,11 @@ const FeaturedPosts = () => {
           {/* Image */}
           {/* - Add and style image component 
               - Rename image src
+              - Adjust image width for firts post
           */}
-          <Image src="featured0.jpeg" className="rounded-3xl object-cover" />
+          <Image src="featured0.jpeg" 
+            className="rounded-3xl object-cover" w="895"
+          />
 
           {/* Details */}
           {/* Add and style detail section */}
