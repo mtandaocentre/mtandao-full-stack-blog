@@ -1,6 +1,9 @@
 const PostListItem = () => {
   return (
-    <div className=''>PostListItem</div>
+    /* Style PostListItem container */
+    <div className='flex flex-col xl:flex-row gap-8'>
+
+    </div>
   )
 }
 
