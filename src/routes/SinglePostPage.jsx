@@ -106,7 +106,18 @@ const SinglePostPage = () => {
         {/* Menu */}
         {/* Add and style menu container */}
         <div className="px-4 h-max sticky top-8">
+          {/* Add Author title */}
+          <h1>Author</h1>
 
+          {/* Add and style image */}
+          <div className="">
+            <Image 
+              src="userImg.png" 
+              className="w-12 h-12 rounded-full object-cover"
+              w="48"
+              h="48"
+            />
+          </div>
         </div>
 
       </div>
