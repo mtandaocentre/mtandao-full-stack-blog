@@ -102,6 +102,16 @@ const HomePage = () => {
       <FeaturedPosts />
       
       {/* POST LIST */}
+      {/* - Add recent posts title
+      */}
+      <div className="">
+        <h1 
+          className="my-8 text-2xl text-[#e0e0e0]"
+        >
+          Recent Posts
+        </h1>
+
+      </div>
     </div>
   )
 }
