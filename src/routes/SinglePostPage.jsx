@@ -108,8 +108,10 @@ const SinglePostPage = () => {
         {/* Menu */}
         {/* Add and style menu container */}
         <div className="px-4 h-max sticky top-8">
-          {/* Add Author title */}
-          <h1>Author</h1>
+          {/* - Add Author title 
+              - style Authors title
+          */}
+          <h1 className="mt-8 mb-4 text-sm font-medium">Author</h1>
 
           {/* Add and style image 
               - Style image author name and description */}
