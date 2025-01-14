@@ -110,24 +110,24 @@ const SinglePostPage = () => {
           {/* Add Author title */}
           <h1>Author</h1>
 
-          {/* Add and style image */}
-          <div className="">
+          {/* Add and style image 
+              - Style image author name and description */}
+          <div className="flex items-center gap-8">
             <Image 
               src="userImg.png" 
               className="w-12 h-12 rounded-full object-cover"
               w="48"
               h="48"
             />
+            {/* Add user name and description */}
+            <Link>Mr. Mtandao</Link>
           </div>
 
-          {/* Add user name and description */}
-          <Link>Mr. Mtandao</Link>
-          <p className="">
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. 
+          {/* Description*/}
+          <p className="text-sm">
+              Lorem Ipsum is simply dummy text of the printing and 
+              typesetting industry.  Lorem Ipsum is simply dummy text of the printing and 
+              typesetting industry. 
           </p>
 
           {/* Add social media links */}
@@ -160,6 +160,9 @@ const SinglePostPage = () => {
             <Link className="underline">Software</Link>
             <Link className="underline">Web3</Link>
           </div>
+
+          {/* Add search heading */}
+          <h1>Search</h1>
 
         </div>
       </div>
