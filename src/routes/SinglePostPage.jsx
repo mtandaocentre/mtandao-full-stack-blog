@@ -61,8 +61,12 @@ const SinglePostPage = () => {
         </div>
 
       </div>
-      {/* Content */}
 
+      {/* Content */}
+      {/* Style content container */}
+      <div className="flex flex-col md:flex-row gap-8">
+
+      </div>
 
     </div>
   )
