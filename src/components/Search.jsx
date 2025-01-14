@@ -1,7 +1,8 @@
 const Search = () => {
   return (
     <div 
-        className='bg-[#e0e0e0] p-2 rounded-full flex items-center 
+        /* Added margin bottom */
+        className='mb-8 bg-[#e0e0e0] p-2 rounded-full flex items-center 
         gap-2'
     >
         {/* Changed svg stroke */}
