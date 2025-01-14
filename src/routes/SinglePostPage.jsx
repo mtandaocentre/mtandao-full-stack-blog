@@ -160,8 +160,10 @@ const SinglePostPage = () => {
                   w="48"
                   h="48"
                 />
-                {/* Add user name and description */}
-                <Link>Mr. Mtandao</Link>
+                {/* - Add user name and description 
+                    - Styled Authosr name 
+                */}
+                <Link className="font-bold">Mr. Mtandao</Link>
               </div>
 
               {/* - Description 
