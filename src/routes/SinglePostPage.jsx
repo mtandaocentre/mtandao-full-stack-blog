@@ -1,5 +1,6 @@
 import Image from "../components/Image"
 import { Link } from "react-router-dom"
+import PostMenuAction from "../components/PostMenuAction"
 
 const SinglePostPage = () => {
   return (
@@ -138,6 +139,10 @@ const SinglePostPage = () => {
               <Image src="instagram.svg"/>
             </Link>
           </div>
+        </div>
+        {/* Add post menu action component */}
+        <div>
+          <PostMenuAction />
         </div>
 
       </div>
