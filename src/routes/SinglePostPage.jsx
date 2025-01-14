@@ -139,12 +139,12 @@ const SinglePostPage = () => {
               <Image src="instagram.svg"/>
             </Link>
           </div>
-        </div>
-        {/* Add post menu action component */}
-        <div>
+         
+         {/* - Add post menu action component 
+             - Change position of PostMenuAction component 
+         */}
           <PostMenuAction />
         </div>
-
       </div>
 
     </div>
