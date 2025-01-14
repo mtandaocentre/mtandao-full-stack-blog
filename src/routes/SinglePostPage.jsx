@@ -6,7 +6,7 @@ const SinglePostPage = () => {
     /* Style single post page container */
     <div className='flex flex-col gap-8'>
       {/* Heading */}
-      <div className="flex gap 8">
+      <div className="flex gap-8">
         
         {/* Title and Details */}
         {/* Style title and detail container */}
@@ -49,9 +49,15 @@ const SinglePostPage = () => {
         </div>
 
         {/* Image */}
-        {/* Add and style Image component*/}
+        {/* - Add and style Image component
+            - Add width and rounding to image
+        */}
         <div className="hidden lg:block w-2/5">
-          <Image src="postImg.jpeg" />
+          <Image 
+            src="postImg.jpeg" 
+            w="600" 
+            className="rounded-2xl" 
+          />
         </div>
 
       </div>
