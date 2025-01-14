@@ -162,8 +162,10 @@ const SinglePostPage = () => {
             <Link className="underline">Web3</Link>
           </div>
 
-          {/* Add search heading */}
-          <h1>Search</h1>
+          {/* - Add search heading 
+              - Style search heading
+          */}
+          <h1 className="mt-8 mb-4 text-sm font-medium">Search</h1>
 
           {/* Add Search component */}
           <Search />
