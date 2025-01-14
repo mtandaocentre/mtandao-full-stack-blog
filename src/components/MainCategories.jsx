@@ -23,33 +23,49 @@ const MainCategories = () => {
                 All Posts
             </Link>
 
-            {/* Creat and style all other categories */}
+            {/* - Creat and style all other categories
+                - Added new categories 
+            */}
             <Link to="/posts?cat=hardware" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
-                Hardware
+                AI
             </Link>
 
             <Link to="/posts?cat=software" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
-                Software
+                Block Chain
             </Link>
 
             <Link to="/posts?cat=networks" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
-                Networks
+                Cloud
             </Link>
 
             <Link to="/posts?cat=distributed-systems" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
-                Distributed Systems
+                Hardware
+            </Link>
+
+            <Link to="/posts?cat=distributed-systems" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Security
+            </Link>
+
+            <Link to="/posts?cat=distributed-systems" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Software
             </Link>
         </div>
 
