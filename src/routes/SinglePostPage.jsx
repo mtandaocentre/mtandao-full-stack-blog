@@ -8,6 +8,10 @@ const SinglePostPage = () => {
         {/* Title and Details */}
         {/* Style title and detail container */}
         <div className="lg:w-3/5 flex flex-col gap-8">
+          {/* Add title */}
+          <h1>
+            Your online place for everything computer
+          </h1>
 
         </div>
 
