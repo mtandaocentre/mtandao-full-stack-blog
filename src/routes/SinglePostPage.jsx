@@ -146,8 +146,10 @@ const SinglePostPage = () => {
          */}
           <PostMenuAction />
 
-          {/* Add categories title */}
-          <h1>Categories</h1>
+          {/* - Add categories title
+              - Style categories heading
+          */}
+          <h1 className="mt-8 mb-4 text-sm font-medium">Categories</h1>
 
           {/* Add categories links */}
           <div className="flex flex-col gap-2 text-sm">
