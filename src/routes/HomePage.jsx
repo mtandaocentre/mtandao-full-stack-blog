@@ -104,7 +104,7 @@ const HomePage = () => {
       
       {/* POST LIST */}
       {/* - Add recent posts title
-          - Add PostList component
+          - Add PostList component to home page
       */}
       <div className="">
         <h1 
