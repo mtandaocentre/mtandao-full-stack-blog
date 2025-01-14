@@ -1,6 +1,9 @@
 const PostMenuAction = () => {
   return (
-    <div className=''>PostMenuAction</div>
+    <div className=''>
+        {/* Add Action Title*/}
+        <h1>Actions</h1>
+    </div>
   )
 }
 
