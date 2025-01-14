@@ -164,8 +164,9 @@ const SinglePostPage = () => {
                 <Link>Mr. Mtandao</Link>
               </div>
 
-              {/* Description*/}
-              <p className="text-sm">
+              {/* - Description 
+                  - Style description */}
+              <p className="text-sm font-medium">
                   Lorem Ipsum is simply dummy text of the printing and 
                   typesetting industry.  Lorem Ipsum is simply dummy text of the printing and 
                   typesetting industry. 
