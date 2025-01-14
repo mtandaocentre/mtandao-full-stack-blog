@@ -147,7 +147,20 @@ const SinglePostPage = () => {
 
           {/* Add categories title */}
           <h1>Categories</h1>
-          
+
+          {/* Add categories links */}
+          <div className="flex flex-col gap-2 text-sm">
+            <Link className="underline">All Posts</Link>
+            <Link className="underline">AI</Link>
+            <Link className="underline">Cloud</Link>
+            <Link className="underline">Data</Link>
+            <Link className="underline">Hardware</Link>
+            <Link className="underline">IoT</Link>
+            <Link className="underline">Security</Link>
+            <Link className="underline">Software</Link>
+            <Link className="underline">Web3</Link>
+          </div>
+
         </div>
       </div>
 
