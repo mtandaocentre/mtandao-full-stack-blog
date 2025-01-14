@@ -1,6 +1,9 @@
 const SinglePostPage = () => {
   return (
-    <div className=''>SinglePostPage</div>
+    /* Style single post page container */
+    <div className='flex flex-col gap-8'>
+
+    </div>
   )
 }
 
