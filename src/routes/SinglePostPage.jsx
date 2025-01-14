@@ -144,6 +144,10 @@ const SinglePostPage = () => {
              - Change position of PostMenuAction component 
          */}
           <PostMenuAction />
+
+          {/* Add categories title */}
+          <h1>Categories</h1>
+          
         </div>
       </div>
 
