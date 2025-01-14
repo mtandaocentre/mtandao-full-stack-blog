@@ -17,16 +17,18 @@ const SinglePostPage = () => {
             Your online place for everything computer
           </h1>
 
-          {/* Add details container */}
+          {/* - Add details container
+              - Style details links 
+          */}
           <div className="flex items-center gap-2 text-[#e0e0e0] text-sm">
             <span>Written by</span>
-            <Link>Mr. Mtandao</Link>
+            <Link className="text-[#e0e0e0] font-semibold">Mr. Mtandao</Link>
             <span>on</span>
-            <Link>Hardware</Link>
+            <Link className="text-[#e0e0e0] font-semibold">Hardware</Link>
             <span>2 days ago</span>
           </div>
 
-          {/* Add description */}
+          {/* Add and style description */}
           <p className="text-[#e0e0e0] font-medium">
           Lorem Ipsum is simply dummy text of the printing and 
           typesetting industry. Lorem Ipsum has been the industrys 
