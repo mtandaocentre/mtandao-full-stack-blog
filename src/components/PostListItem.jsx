@@ -5,12 +5,15 @@ const PostListItem = () => {
   return (
     /* - Style PostListItem container 
        - Adjusted Image and details container sizes
+       - Adjusted image width
     */
     <div className='flex flex-col xl:flex-row gap-8'>
         {/* Image */}
         {/* Add and style PostListItem image */}
         <div className="md:hidden xl:block xl:w-1/3">
-            <Image src="postImg.jpeg" className="rounded-2xl object-cover"/>
+            <Image src="postImg.jpeg" 
+                className="rounded-2xl object-cover" w="735"
+            />
         </div>
 
         {/* Details */}
