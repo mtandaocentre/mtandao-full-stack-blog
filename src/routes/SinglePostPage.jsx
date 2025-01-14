@@ -103,6 +103,42 @@ const SinglePostPage = () => {
             passages, and more recently with desktop publishing software 
             like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
+          <p>  
+            Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industrys 
+            standard dummy text ever since the 1500s, when an unknown 
+            printer took a galley of type and scrambled it to make a 
+            type specimen book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum 
+            passages, and more recently with desktop publishing software 
+            like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>  
+            Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industrys 
+            standard dummy text ever since the 1500s, when an unknown 
+            printer took a galley of type and scrambled it to make a 
+            type specimen book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum 
+            passages, and more recently with desktop publishing software 
+            like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>  
+            Lorem Ipsum is simply dummy text of the printing and 
+            typesetting industry. Lorem Ipsum has been the industrys 
+            standard dummy text ever since the 1500s, when an unknown 
+            printer took a galley of type and scrambled it to make a 
+            type specimen book. It has survived not only five centuries, 
+            but also the leap into electronic typesetting, remaining 
+            essentially unchanged. It was popularised in the 1960s with 
+            the release of Letraset sheets containing Lorem Ipsum 
+            passages, and more recently with desktop publishing software 
+            like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
         </div>
 
         {/* Menu */}
@@ -111,36 +147,39 @@ const SinglePostPage = () => {
           {/* - Add Author title 
               - style Authors title
           */}
-          <h1 className="mt-8 mb-4 text-sm font-medium">Author</h1>
-
-          {/* Add and style image 
+          <h1 className="mb-4 text-sm font-medium">Author</h1>
+          
+          {/* Style Author section */}
+          <div className="flex flex-col gap-4">
+              {/* - Add and style image 
               - Style image author name and description */}
-          <div className="flex items-center gap-8">
-            <Image 
-              src="userImg.png" 
-              className="w-12 h-12 rounded-full object-cover"
-              w="48"
-              h="48"
-            />
-            {/* Add user name and description */}
-            <Link>Mr. Mtandao</Link>
-          </div>
+              <div className="flex items-center gap-8">
+                <Image 
+                  src="userImg.png" 
+                  className="w-12 h-12 rounded-full object-cover"
+                  w="48"
+                  h="48"
+                />
+                {/* Add user name and description */}
+                <Link>Mr. Mtandao</Link>
+              </div>
 
-          {/* Description*/}
-          <p className="text-sm">
-              Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry.  Lorem Ipsum is simply dummy text of the printing and 
-              typesetting industry. 
-          </p>
+              {/* Description*/}
+              <p className="text-sm">
+                  Lorem Ipsum is simply dummy text of the printing and 
+                  typesetting industry.  Lorem Ipsum is simply dummy text of the printing and 
+                  typesetting industry. 
+              </p>
 
-          {/* Add social media links */}
-          <div className="flex gap-2">
-            <Link>
-              <Image src="facebook.svg"/>
-            </Link>
-            <Link>
-              <Image src="instagram.svg"/>
-            </Link>
+              {/* Add social media links */}
+              <div className="flex gap-2">
+                <Link>
+                  <Image src="facebook.svg"/>
+                </Link>
+                <Link>
+                  <Image src="instagram.svg"/>
+                </Link>
+              </div>
           </div>
          
          {/* - Add post menu action component 
