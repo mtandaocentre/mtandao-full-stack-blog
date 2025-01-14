@@ -1,6 +1,7 @@
 import Image from "../components/Image"
 import { Link } from "react-router-dom"
 import PostMenuAction from "../components/PostMenuAction"
+import Search from "../components/Search"
 
 const SinglePostPage = () => {
   return (
@@ -163,6 +164,9 @@ const SinglePostPage = () => {
 
           {/* Add search heading */}
           <h1>Search</h1>
+
+          {/* Add Search component */}
+          <Search />
 
         </div>
       </div>
