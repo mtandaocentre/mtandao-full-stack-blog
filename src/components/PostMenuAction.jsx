@@ -1,8 +1,9 @@
 const PostMenuAction = () => {
   return (
     <div className=''>
-        {/* Add Action Title */}
-        <h1>Actions</h1>
+        {/* - Add Action Title 
+            - Style Action Title*/}
+        <h1 className="mt-8 mb-4 text-sm font-medium">Actions</h1>
 
         {/* Add save this post and delete this post icon */}
         <div className="flex items-center gap-2 py-2 text-sm cursor-pointer">
