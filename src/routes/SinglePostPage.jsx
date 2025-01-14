@@ -103,6 +103,12 @@ const SinglePostPage = () => {
           </p>
         </div>
 
+        {/* Menu */}
+        {/* Add and style menu container */}
+        <div className="px-4 h-max sticky top-8">
+
+        </div>
+
       </div>
 
     </div>
