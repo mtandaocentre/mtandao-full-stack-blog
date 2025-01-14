@@ -8,7 +8,7 @@ const MainCategories = () => {
         */
         className='hidden md:flex bg-[#a3a3a3] rounded-3xl 
         xl:rounded-full p-4 shadow-lg items-center justify-center
-        gap-8 text-[#1b1c1c] font-bold'
+        gap-4 text-[#1b1c1c] font-bold'
     >
         {/* Links */}
         <div 
@@ -25,19 +25,13 @@ const MainCategories = () => {
 
             {/* - Creat and style all other categories
                 - Added new categories 
+                - Added Data, IoT and Web3 categories 
             */}
             <Link to="/posts?cat=hardware" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 AI
-            </Link>
-
-            <Link to="/posts?cat=software" 
-                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
-                px-4 py-2"
-            >
-                Block Chain
             </Link>
 
             <Link to="/posts?cat=networks" 
@@ -47,11 +41,25 @@ const MainCategories = () => {
                 Cloud
             </Link>
 
+            <Link to="/posts?cat=networks" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Data
+            </Link>
+
             <Link to="/posts?cat=distributed-systems" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Hardware
+            </Link>
+
+            <Link to="/posts?cat=distributed-systems" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                IoT
             </Link>
 
             <Link to="/posts?cat=distributed-systems" 
@@ -66,6 +74,13 @@ const MainCategories = () => {
                 px-4 py-2"
             >
                 Software
+            </Link>
+
+            <Link to="/posts?cat=distributed-systems" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Web3
             </Link>
         </div>
 
