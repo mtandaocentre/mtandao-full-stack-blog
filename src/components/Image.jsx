@@ -2,6 +2,7 @@ import { IKImage } from "imagekitio-react"
 
 // Make image component a prop
 // Corrected prop declaration
+// Add transformation function for compressing images 
 const Image = ({src, className, w, h, alt}) => {
   return (
     <IKImage 
@@ -13,6 +14,12 @@ const Image = ({src, className, w, h, alt}) => {
         alt={alt} 
         width={w}
         height={h}
+        transformation={[
+          {
+            width: w,
+            height: h,
+          }
+        ]}
     />
   )
 }
