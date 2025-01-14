@@ -5,7 +5,10 @@ const FeaturedPosts = () => {
   return (
     /* Add responsiveness */
     <div className='mt-8 flex flex-col lg:flex-row gap-8'>
-        {/* Divide featured post into two sections */}
+        {/* - Divide featured post into two sections
+            - Add w-full and h-full to all images to contain them in 
+              their containers 
+        */}
         
         {/* Fisrt post */}
         <div className="w-full lg:w-1/2 flex flex-col gap-4">
@@ -15,8 +18,10 @@ const FeaturedPosts = () => {
               - Rename image src
               - Adjust image width for firts post
           */}
-          <Image src="featured0.jpeg" 
-            className="rounded-3xl object-cover" w="895"
+          <Image 
+            src="featured0.jpeg" 
+            className="rounded-3xl object-cover w-full h-full" 
+            w="895"
           />
 
           {/* Details */}
@@ -48,7 +53,7 @@ const FeaturedPosts = () => {
             <div className="w-1/3 aspect-video">
               <Image 
                 src="featured1.jpg"
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-cover w-full h-full"
                 w="298"
               />
             </div>
@@ -81,7 +86,7 @@ const FeaturedPosts = () => {
             <div className="w-1/3 aspect-video">
               <Image 
                 src="featured2.jpg"
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-cover w-full h-full"
                 w="298"
               />
             </div>
@@ -113,7 +118,7 @@ const FeaturedPosts = () => {
             <div className="w-1/3 aspect-video">
               <Image 
                 src="featured3.jpeg"
-                className="rounded-3xl object-cover"
+                className="rounded-3xl object-cover w-full h-full"
                 w="298"
               />
             </div>
