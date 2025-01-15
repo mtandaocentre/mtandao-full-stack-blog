@@ -79,7 +79,10 @@ const WritePage = () => {
 
         {/* Use react Quill to create write page content text area */}
         {/* Style quill */}
-        <ReactQuill theme="snow" className="flex-1"/>
+        <ReactQuill 
+          theme="snow" 
+          className="flex-1 rounded-xl bg-[#e0e0e0] shadow-md"
+        />
 
         {/* Add send button */}
         <button>Send</button>
