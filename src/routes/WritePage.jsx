@@ -1,4 +1,4 @@
-import { useUser } from "@clerk/clerk-react"
+eate import { useUser } from "@clerk/clerk-react"
 
 const WritePage = () => {
 
@@ -17,6 +17,11 @@ const WritePage = () => {
     <div className=''>
       {/* Create page title */}
       <h1>Create a New Post</h1>
+
+      {/* Create form */}
+      <form action="">
+
+      </form>
     </div>
   )
 }
