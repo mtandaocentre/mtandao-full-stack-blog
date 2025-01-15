@@ -1,6 +1,10 @@
 const PostListPage = () => {
   return (
-    <div className=''>PostListPage</div>
+    <div className=''>
+      {/* Add page title */}
+      <h1 className="mb-8 text-2xl">AI Blog</h1>
+
+    </div>
   )
 }
 
