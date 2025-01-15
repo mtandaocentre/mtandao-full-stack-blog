@@ -85,7 +85,13 @@ const WritePage = () => {
         />
 
         {/* Add send button */}
-        <button>Send</button>
+        {/* Style send button */}
+        <button 
+          className="text-[#1b1c1c] bg-[#a3a3a3] font-medium
+          rounded-xl mt-4 p-2 w-36"
+        >
+          Send
+        </button>
       </form>
     </div>
   )
