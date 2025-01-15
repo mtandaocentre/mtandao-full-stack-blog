@@ -43,6 +43,8 @@ const WritePage = () => {
           </select>
         </div>
 
+        {/* Add description text area */}
+        <textarea name="desc" placeholder="Add a short description" />
       </form>
     </div>
   )
