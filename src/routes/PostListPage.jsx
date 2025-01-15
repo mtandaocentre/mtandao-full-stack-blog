@@ -30,7 +30,8 @@ const PostListPage = () => {
         </div>
 
         {/* Add SideMenu Component */}
-        <div className="">
+        {/* Hide and show menu depending on button state */}
+        <div className={`${open ? "block" : "hidden"} md:block`}>
           <SideMenu />
         </div>
       </div>
