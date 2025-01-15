@@ -1,4 +1,5 @@
 import PostList from "../components/PostList"
+import SideMenu from "../components/SideMenu"
 
 const PostListPage = () => {
   return (
@@ -12,6 +13,11 @@ const PostListPage = () => {
         {/* Add PostList component */}
         <div className="">
           <PostList />
+        </div>
+
+        {/* Add SideMenu Component */}
+        <div className="">
+          <SideMenu />
         </div>
       </div>
 
