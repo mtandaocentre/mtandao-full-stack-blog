@@ -1,3 +1,5 @@
+import Comment from "./Comment"
+
 const Comments = () => {
   return (
     // Initiate and style Comments mother container
@@ -21,6 +23,14 @@ const Comments = () => {
                 Send
             </button>
         </div>
+        {/* Add single comment components */}
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
     </div>
   )
 }
