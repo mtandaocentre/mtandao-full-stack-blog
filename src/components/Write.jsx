@@ -17,7 +17,10 @@ const Write = () => {
 
     
     return (
-        <div className=''>Write</div>
+        // Create page title
+        <div className=''>
+            <h1>Create a New Post</h1>
+        </div>
     )
 }
 
