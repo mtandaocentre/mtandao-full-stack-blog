@@ -23,6 +23,9 @@ const WritePage = () => {
         {/* Add button for adding cover image */}
         <button>Add a cover image</button>
 
+        {/* Add title */}
+        <input type="text" placeholder="My Tech Idea/Story" />
+
       </form>
     </div>
   )
