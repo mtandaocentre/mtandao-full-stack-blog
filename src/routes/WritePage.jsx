@@ -27,11 +27,11 @@ const WritePage = () => {
 
       {/* Create form */}
       {/* Style form container */}
-      <form action="flex flex-col gap-6">
+      <form action="flex flex-col gap-6 bg-[#a3a3a3] flex-1 mb-6">
         {/* Add button for adding cover image */}
         {/* Style button */}
         <button 
-          className="p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
+          className="w-max p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
           bg-[#a3a3a3]"
         >
           Add a cover image
@@ -61,7 +61,8 @@ const WritePage = () => {
         <textarea name="desc" placeholder="Add a short description" />
 
         {/* Use react Quill to create write page content text area */}
-        <ReactQuill theme="snow"/>
+        {/* Style quill */}
+        <ReactQuill theme="snow" className="flex-1"/>
 
         {/* Add send button */}
         <button>Send</button>
