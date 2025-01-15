@@ -50,6 +50,9 @@ const WritePage = () => {
 
         {/* Use react Quill to create write page content text area */}
         <ReactQuill theme="snow"/>
+
+        {/* Add send button */}
+        <button>Send</button>
       </form>
     </div>
   )
