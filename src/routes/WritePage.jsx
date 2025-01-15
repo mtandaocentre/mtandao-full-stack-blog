@@ -20,6 +20,8 @@ const WritePage = () => {
 
       {/* Create form */}
       <form action="">
+        {/* Add button for adding cover image */}
+        <button>Add a cover image</button>
 
       </form>
     </div>
