@@ -26,7 +26,8 @@ const WritePage = () => {
       <h1 className="text-xl font-light">Create a New Post</h1>
 
       {/* Create form */}
-      <form action="">
+      {/* Style form container */}
+      <form action="flex flex-col gap-6">
         {/* Add button for adding cover image */}
         <button>Add a cover image</button>
 
