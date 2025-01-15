@@ -27,7 +27,8 @@ const WritePage = () => {
 
       {/* Create form */}
       {/* Style form container */}
-      <form action="flex flex-col gap-6 bg-[#a3a3a3] flex-1 mb-6">
+      {/* Change actions to classname */}
+      <form className="flex flex-col gap-6 flex-1 mb-6">
         {/* Add button for adding cover image */}
         {/* Style button */}
         <button 
@@ -38,7 +39,11 @@ const WritePage = () => {
         </button>
 
         {/* Add title */}
-        <input type="text" placeholder="My Tech Idea/Story" />
+        <input 
+          className="text-4xl font-semibold bg-transparent outline-none" 
+          type="text" 
+          placeholder="My Tech Idea/Story" 
+        />
 
         {/* Create choose category section */}
         <div className="">
