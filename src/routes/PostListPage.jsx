@@ -12,6 +12,14 @@ const PostListPage = () => {
       {/* Add page title */}
       <h1 className="mb-8 text-2xl">AI Blog</h1>
 
+      {/* Small screen side menu button */}
+      <button 
+        className="bg-[#a3a3a3] text-[#1b1c1c] px-4 py-2
+        rounded-2xl mb-4 font-semibold md:hidden"
+        onClick={()=>setOpen(prev=>!prev)}>
+          {open ? "Close" : "Filter or Search"} 
+      </button>
+
       {/* Create parent view */}
       <div className="flex gap-8">
 
