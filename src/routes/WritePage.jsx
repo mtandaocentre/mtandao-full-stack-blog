@@ -16,7 +16,11 @@ const WritePage = () => {
   }
 
   return (
-    <div className=''>
+    // Style root container
+    <div 
+      className='h-[calc(100vh-64px)] md:h-[calc(100vh-80px)] flex
+      flex-col gap-6'
+    >
       {/* Create page title */}
       <h1>Create a New Post</h1>
 
