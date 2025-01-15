@@ -2,6 +2,7 @@ import Image from "../components/Image"
 import { Link } from "react-router-dom"
 import PostMenuAction from "../components/PostMenuAction"
 import Search from "../components/Search"
+import Comments from "../components/Comments"
 
 const SinglePostPage = () => {
   return (
@@ -217,10 +218,11 @@ const SinglePostPage = () => {
 
           {/* Add Search component */}
           <Search />
-
         </div>
       </div>
-
+      {/* Comments*/}
+      {/* Add comments component */}
+      <Comments />
     </div>
   )
 }
