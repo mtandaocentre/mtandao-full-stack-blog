@@ -7,8 +7,15 @@ const Comments = () => {
         <h1 className="text-xl text-[#e0e0e0] underline">Comments</h1>
 
         {/* Create comment input area */}
-        <div className="">
+        {/* Add and style button */}
+        <div className="flex items-center justify-between gap-8 w-full">
             <textarea placeholder="Write a comment..." name="" id="" />
+            <button 
+                className="bg-[#a3a3a3] px-4 py-3 text-[#1b1c1c] 
+                font-medium rounded-xl"
+            >
+                Send
+            </button>
         </div>
     </div>
   )
