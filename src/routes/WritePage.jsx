@@ -46,9 +46,15 @@ const WritePage = () => {
         />
 
         {/* Create choose category section */}
-        <div className="">
-          <label htmlFor="">Choose a category:</label>
-          <select name="cat" id="">
+        {/* Style choose category section */}
+        <div className="flex items-center gap-4">
+          <label htmlFor="" className="text-sm">Choose a category:</label>
+          <select 
+            name="cat" 
+            id="" 
+            className="p-2 rounded-xl bg-[#a3a3a3] text-[#1b1c1c] 
+            shadow-md"
+          >
             <option value="general">General</option>
             <option value="ai">AI</option>
             <option value="cloud">Cloud</option>
