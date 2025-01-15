@@ -24,7 +24,7 @@ const SideMenu = () => {
                         value="newest" 
                         className="appearance-none w-4 h-4 border-[1.5px] 
                         border-[#e0e0e0] cursor-pointer rounded-sm
-                        checked:bg-[#a3a3a3]"
+                        bg-[#1b1c1c] checked:bg-[#a3a3a3]"
                     />
                     Newest
             </label>
@@ -38,7 +38,7 @@ const SideMenu = () => {
                         value="popular" 
                         className="appearance-none w-4 h-4 border-[1.5px] 
                         border-[#e0e0e0] cursor-pointer rounded-sm
-                        checked:bg-[#a3a3a3]"
+                        bg-[#1b1c1c] checked:bg-[#a3a3a3]"
                     />
                     Most Popular
             </label>
@@ -52,7 +52,7 @@ const SideMenu = () => {
                         value="trending" 
                         className="appearance-none w-4 h-4 border-[1.5px] 
                         border-[#e0e0e0] cursor-pointer rounded-sm
-                        checked:bg-[#a3a3a3]"
+                        bg-[#1b1c1c] checked:bg-[#a3a3a3]"
                     />
                     Trending
             </label>
@@ -66,7 +66,7 @@ const SideMenu = () => {
                         value="oldest" 
                         className="appearance-none w-4 h-4 border-[1.5px] 
                         border-[#e0e0e0] cursor-pointer rounded-sm
-                        checked:bg-[#a3a3a3]"
+                        bg-[#1b1c1c] checked:bg-[#a3a3a3]"
                     />
                     Oldest
             </label>
