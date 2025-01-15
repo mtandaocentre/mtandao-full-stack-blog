@@ -1,4 +1,6 @@
 import { useUser } from "@clerk/clerk-react"
+import 'react-quill-new/dist/quill.snow.css';
+import ReactQuill from "react-quill-new";
 
 const WritePage = () => {
 
@@ -45,6 +47,9 @@ const WritePage = () => {
 
         {/* Add description text area */}
         <textarea name="desc" placeholder="Add a short description" />
+
+        {/* Use react Quill to create write page content text area */}
+        <ReactQuill theme="snow"/>
       </form>
     </div>
   )
