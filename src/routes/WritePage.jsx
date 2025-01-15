@@ -40,7 +40,8 @@ const WritePage = () => {
 
         {/* Add title */}
         <input 
-          className="text-4xl font-semibold bg-transparent outline-none" 
+          className="text-4xl font-semibold bg-transparent 
+          outline-none" 
           type="text" 
           placeholder="My Tech Idea/Story" 
         />
@@ -69,7 +70,12 @@ const WritePage = () => {
         </div>
 
         {/* Add description text area */}
-        <textarea name="desc" placeholder="Add a short description" />
+        {/* Style description text area */}
+        <textarea 
+          name="desc" 
+          placeholder="Add a short description"
+          className="p-4 rounded-xl bg-[#e0e0e0] shadow-md" 
+        />
 
         {/* Use react Quill to create write page content text area */}
         {/* Style quill */}
