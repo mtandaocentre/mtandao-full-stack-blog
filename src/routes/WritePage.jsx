@@ -14,7 +14,10 @@ const WritePage = () => {
   }
 
   return (
-    <div className=''>WritePage</div>
+    <div className=''>
+      {/* Create page title */}
+      <h1>Create a New Post</h1>
+    </div>
   )
 }
 
