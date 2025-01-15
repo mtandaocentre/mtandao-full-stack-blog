@@ -22,7 +22,8 @@ const WritePage = () => {
       flex-col gap-6'
     >
       {/* Create page title */}
-      <h1>Create a New Post</h1>
+      {/* Style page title */}
+      <h1 className="text-xl font-light">Create a New Post</h1>
 
       {/* Create form */}
       <form action="">
