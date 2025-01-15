@@ -1,3 +1,5 @@
+import PostList from "../components/PostList"
+
 const PostListPage = () => {
   return (
     <div className=''>
@@ -7,6 +9,10 @@ const PostListPage = () => {
       {/* Create parent view */}
       <div className="flex gap-8">
 
+        {/* Add PostList component */}
+        <div className="">
+          <PostList />
+        </div>
       </div>
 
     </div>
