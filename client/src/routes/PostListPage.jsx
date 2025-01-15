@@ -10,7 +10,7 @@ const PostListPage = () => {
   return (
     <div className=''>
       {/* Add page title */}
-      <h1 className="mb-8 text-2xl">AI Blog</h1>
+      <h1 className="mb-8 text-2xl">Category Blog</h1>
 
       {/* Small screen side menu button */}
       <button 
