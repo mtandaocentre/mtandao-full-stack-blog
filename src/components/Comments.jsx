@@ -8,8 +8,12 @@ const Comments = () => {
 
         {/* Create comment input area */}
         {/* Add and style button */}
+        {/* Style content input area */}
         <div className="flex items-center justify-between gap-8 w-full">
-            <textarea placeholder="Write a comment..." name="" id="" />
+            <textarea 
+                placeholder="Write a comment..." 
+                className="w-full p-4 rounded -xl" 
+            />
             <button 
                 className="bg-[#a3a3a3] px-4 py-3 text-[#1b1c1c] 
                 font-medium rounded-xl"
