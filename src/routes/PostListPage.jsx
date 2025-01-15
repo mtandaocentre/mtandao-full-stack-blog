@@ -21,7 +21,8 @@ const PostListPage = () => {
       </button>
 
       {/* Create parent view */}
-      <div className="flex gap-8">
+      {/* Add responsiveness to side menu */}
+      <div className="flex flex-col-reverse gap-8 md:flex-row">
 
         {/* Add PostList component */}
         <div className="">
