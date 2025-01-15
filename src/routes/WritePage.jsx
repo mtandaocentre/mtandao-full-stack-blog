@@ -29,7 +29,13 @@ const WritePage = () => {
       {/* Style form container */}
       <form action="flex flex-col gap-6">
         {/* Add button for adding cover image */}
-        <button>Add a cover image</button>
+        {/* Style button */}
+        <button 
+          className="p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
+          bg-[#a3a3a3]"
+        >
+          Add a cover image
+        </button>
 
         {/* Add title */}
         <input type="text" placeholder="My Tech Idea/Story" />
