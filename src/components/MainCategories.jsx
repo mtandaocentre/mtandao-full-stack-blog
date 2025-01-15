@@ -8,7 +8,7 @@ const MainCategories = () => {
         */
         className='hidden md:flex bg-[#a3a3a3] rounded-3xl 
         xl:rounded-full p-4 shadow-lg items-center justify-center
-        gap-4 text-[#1b1c1c] font-bold'
+        gap-2 text-[#1b1c1c] font-bold text-sm'
     >
         {/* Links */}
         <div 
@@ -27,56 +27,63 @@ const MainCategories = () => {
                 - Added new categories 
                 - Added Data, IoT and Web3 categories 
             */}
-            <Link to="/posts?cat=hardware" 
+            <Link to="/posts?cat=ai" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 AI
             </Link>
 
-            <Link to="/posts?cat=networks" 
+            <Link to="/posts?cat=cloud" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Cloud
             </Link>
 
-            <Link to="/posts?cat=networks" 
+            <Link to="/posts?cat=data" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Data
             </Link>
 
-            <Link to="/posts?cat=distributed-systems" 
+            <Link to="/posts?cat=hardware" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Hardware
             </Link>
 
-            <Link to="/posts?cat=distributed-systems" 
+            <Link to="/posts?cat=iot" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 IoT
             </Link>
 
-            <Link to="/posts?cat=distributed-systems" 
+            <Link to="/posts?cat=security" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Security
             </Link>
 
-            <Link to="/posts?cat=distributed-systems" 
+            <Link to="/posts?cat=software" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
                 Software
             </Link>
 
-            <Link to="/posts?cat=distributed-systems" 
+            <Link to="/posts?cat=web2" 
+                className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
+                px-4 py-2"
+            >
+                Web2
+            </Link>
+
+            <Link to="/posts?cat=web3" 
                 className="hover:bg-[#737373] text-[#1b1c1c] rounded-full
                 px-4 py-2"
             >
