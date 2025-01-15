@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const SideMenu = () => {
   return (
     // Make menu sticky during scroll
-    <div className='px-4 h-max sticky top-8'>
+    <div className='px-4 h-max sticky top-8 mb-4'>
         
         {/* Create side menu sections titles */}
         <h1 className="mb-4 text-sm font-medium">Search</h1>
