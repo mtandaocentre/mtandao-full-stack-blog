@@ -74,14 +74,14 @@ const WritePage = () => {
         <textarea 
           name="desc" 
           placeholder="Add a short description"
-          className="p-4 rounded-xl bg-[#e0e0e0] shadow-md" 
+          className="p-4 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md" 
         />
 
         {/* Use react Quill to create write page content text area */}
         {/* Style quill */}
         <ReactQuill 
           theme="snow" 
-          className="flex-1 rounded-xl bg-[#e0e0e0] shadow-md"
+          className="flex-1 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md"
         />
 
         {/* Add send button */}
