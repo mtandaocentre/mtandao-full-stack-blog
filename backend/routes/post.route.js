@@ -4,8 +4,8 @@ import express from "express"
 const router = express.Router()
 
 // Test router
-// router.get("/anothertest",(req,res)=>{
-//     res.status(200).send("user route")
+// router.get("/anothertest/post",(req,res)=>{
+//     res.status(200).send("post route")
 // })
 
 // Export router

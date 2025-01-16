@@ -1,6 +1,8 @@
 // Import Express
 import express from "express"
 import userRouter from "./routes/user.route.js"
+import postRouter from "./routes/post.route.js"
+import commentRouter from "./routes/comment.route.js"
 
 // Create express application
 const app = express()
@@ -14,7 +16,11 @@ app.get("/test",(req,res)=>{
 console.log(process.env.testkey);
 
 // Test router
+// app.use("/users", userRouter);
+
 app.use("/users", userRouter);
+app.use("/posts", postRouter);
+app.use("/comments", commentRouter);
 
 // Create port to listen
 app.listen(3000,()=>{
