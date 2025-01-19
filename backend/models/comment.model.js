@@ -3,6 +3,20 @@ import mongoose from "mongoose";
 
 // Create comment schema
 const commentSchema = new Schema({
+    // Add user information when new comment is added
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
+
+    // Add post information for which comment belongs to
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+        required: true
+    },
+
     // Description    
     desc: {
             type: String,
