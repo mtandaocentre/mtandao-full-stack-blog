@@ -4,28 +4,28 @@ import mongoose from "mongoose"
 // Create user Schema
 const userSchema = new Schema({
         // username
-        username:{
-            type:String,
-            required:true,
-            unique:true,
+        username: {
+            type: String,
+            required: true,
+            unique: true,
         },
 
         // email
-        email:{
-            type:String,
-            required:true,
-            unique:true,
+        email: {
+            type: String,
+            required: true,
+            unique: true,
         },
 
         // Image
-        img:{
-            type:String,
+        img: {
+            type: String,
         },
 
         // Saved Posts
-        svedPosts:{
-            type:[String],
-            default:[]
+        svedPosts: {
+            type: [String],
+            default: []
         }
     }, 
 
