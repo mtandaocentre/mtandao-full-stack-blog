@@ -1,6 +1,7 @@
 import express from "express"
-import userRoute from "./routes/user.route.js"
-import postRoute from "./routes/post.route.js"
+import userRouter from "./routes/user.route.js"
+import postRouter from "./routes/post.route.js"
+import commentRouter from "./routes/comment.route.js"
 
 // Create express app/server
 const app = express();
@@ -14,9 +15,11 @@ const app = express();
 // })
 
 // Use user router to get api
-app.use("/users", userRoute);
+app.use("/users", userRouter);
 // Use post router to get api
-app.use("/posts", postRoute);
+app.use("/posts", postRouter);
+// Use post router to get api
+app.use("/comments", commentRouter);
 
 // assign app port to listen to and report back
 app.listen(3000, () => {
