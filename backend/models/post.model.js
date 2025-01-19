@@ -3,6 +3,13 @@ import mongoose from "mongoose";
 
 // create post schema
 const postSchema = new Schema({
+        // Add user information when new post is added
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        },
+
         // Title
         title: {
             type: String,
