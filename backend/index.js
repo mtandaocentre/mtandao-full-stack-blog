@@ -1,7 +1,9 @@
 import express from "express"
+import connectDB from "./lib/connectDB.js"
 import userRouter from "./routes/user.route.js"
 import postRouter from "./routes/post.route.js"
 import commentRouter from "./routes/comment.route.js"
+
 
 // Create express app/server
 const app = express();
@@ -23,5 +25,6 @@ app.use("/comments", commentRouter);
 
 // assign app port to listen to and report back
 app.listen(3000, () => {
+    connectDB()
     console.log("Server is running")
 });
