@@ -11,7 +11,7 @@ const commentSchema = new Schema({
     },
 
     // Add post information for which comment belongs to
-    user: {
+    post: {
         type: Schema.Types.ObjectId,
         ref: "Post",
         required: true
