@@ -8,6 +8,9 @@ import commentRouter from "./routes/comment.route.js"
 // Create express app/server
 const app = express();
 
+// Allow express to send json
+app.use(express.json()); 
+
 // test if .env can be accessed
 // console.log(process.env.test)
 
