@@ -2,7 +2,7 @@ import express from "express";
 import { 
     getPosts, 
     getPost, 
-    createPost 
+    createPost
 } from "../controllers/post.controller.js";
 
 // Define router
@@ -16,7 +16,7 @@ router.get("/", getPosts);
 router.get("/:slug", getPost);
 
 // Use post conroller to create a post
-router.get("/", createPost);
+router.post("/", createPost);
 
 // export default
 export default router
