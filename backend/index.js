@@ -21,10 +21,25 @@ app.use(express.json());
 
 // Use user router to get api
 app.use("/users", userRouter);
+
 // Use post router to get api
 app.use("/posts", postRouter);
+
 // Use post router to get api
 app.use("/comments", commentRouter);
+
+// Create end point error handler
+app.use((error, req, res, next) => {
+
+    res.status( error.status || 500 );
+
+    res.json({
+        message: error.message || "Something went wrong!",
+        status: error.status,
+        stack: error.stack
+    });
+
+});
 
 // assign app port to listen to and report back
 app.listen(3000, () => {
