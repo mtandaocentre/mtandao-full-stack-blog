@@ -1,5 +1,9 @@
 import express from "express";
-import { getPosts, getPost } from "../controllers/post.controller.js";
+import { 
+    getPosts, 
+    getPost, 
+    createPost 
+} from "../controllers/post.controller.js";
 
 // Define router
 const router = express.Router();
@@ -10,6 +14,9 @@ router.get("/", getPosts);
 
 // Use post conroller to get single post
 router.get("/:slug", getPost);
+
+// Use post conroller to create a post
+router.get("/", createPost);
 
 // export default
 export default router
