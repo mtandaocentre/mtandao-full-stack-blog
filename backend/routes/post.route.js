@@ -2,21 +2,25 @@ import express from "express";
 import { 
     getPosts, 
     getPost, 
-    createPost
+    createPost,
+    deletePost
 } from "../controllers/post.controller.js";
 
 // Define router
 const router = express.Router();
 
 // Use router to call api
-// Use post conroller to get posts for posts root endpoint
+// Create get method end point and use getPosts from post.conroller to get posts
 router.get("/", getPosts);
 
-// Use post conroller to get single post
+// Create get method end point and use getPost from post.conroller to get single post
 router.get("/:slug", getPost);
 
-// Use post conroller to create a post
+// create post method end point and use createPost from post.conroller to create a post
 router.post("/", createPost);
+
+// create delete method end point and use deletePost from post.conroller to delete a post
+router.delete("/:id", deletePost);
 
 // export default
 export default router
