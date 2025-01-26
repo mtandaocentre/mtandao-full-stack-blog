@@ -9,6 +9,9 @@ import webhookRouter from "./routes/webhook.route.js"
 // Create express app/server
 const app = express();
 
+// Use webhook end point to call webhook router
+app.use("/webhooks", webhookRouter);
+
 // Allow express to send json
 app.use(express.json()); 
 
@@ -28,9 +31,6 @@ app.use("/posts", postRouter);
 
 // Use post router to get api
 app.use("/comments", commentRouter);
-
-// Use webhook end point to call webhook router
-app.use("/webhooks", webhookRouter);
 
 // Create end point error handler
 app.use((error, req, res, next) => {
