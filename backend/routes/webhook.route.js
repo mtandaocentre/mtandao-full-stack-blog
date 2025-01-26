@@ -5,7 +5,8 @@ import { clerkWebHook } from "../controllers/webhook.controller.js";
 const router = express.Router();
 
 // Create clerk endpoint
-router.post("/clerk", clerkWebHook);
+// Add body parser middle wear
+router.post("/clerk", bodyParser.raw({ type: 'application/json' }), clerkWebHook);
 
 // Export router by default
 export default router
