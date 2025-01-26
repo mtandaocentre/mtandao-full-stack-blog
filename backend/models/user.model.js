@@ -3,7 +3,14 @@ import mongoose from "mongoose"
 
 // Create user Schema
 const userSchema = new Schema({
-        // username
+       
+    // Clerk Id
+        clerkId: {
+            type: String,
+            required: true, 
+            unique: true
+        },
+    // username
         username: {
             type: String,
             required: true,
