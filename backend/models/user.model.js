@@ -5,7 +5,7 @@ import mongoose from "mongoose"
 const userSchema = new Schema({
        
     // Clerk Id
-        clerkId: {
+        clerkUserId: {
             type: String,
             required: true, 
             unique: true
