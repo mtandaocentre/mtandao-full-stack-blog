@@ -3,6 +3,7 @@ import connectDB from "./lib/connectDB.js"
 import userRouter from "./routes/user.route.js"
 import postRouter from "./routes/post.route.js"
 import commentRouter from "./routes/comment.route.js"
+import webhookRouter from "./routes/webhook.route.js"
 
 
 // Create express app/server
@@ -27,6 +28,9 @@ app.use("/posts", postRouter);
 
 // Use post router to get api
 app.use("/comments", commentRouter);
+
+// Use webhook end point to call webhook router
+app.use("/webhook", webhookRouter);
 
 // Create end point error handler
 app.use((error, req, res, next) => {

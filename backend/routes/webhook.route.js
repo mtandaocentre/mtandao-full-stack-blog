@@ -1,5 +1,5 @@
 import express from "express";
-import { clerkWebHook } from "../controllers/webhook.controller";
+import { clerkWebHook } from "../controllers/webhook.controller.js";
 
 // define router
 const router = express.Router();
