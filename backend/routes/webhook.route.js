@@ -1,5 +1,6 @@
 import express from "express";
 import { clerkWebHook } from "../controllers/webhook.controller.js";
+import bodyParser from "body-parser"
 
 // define router
 const router = express.Router();
