@@ -30,7 +30,7 @@ app.use("/posts", postRouter);
 app.use("/comments", commentRouter);
 
 // Use webhook end point to call webhook router
-app.use("/webhook", webhookRouter);
+app.use("/webhooks", webhookRouter);
 
 // Create end point error handler
 app.use((error, req, res, next) => {
