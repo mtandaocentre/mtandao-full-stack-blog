@@ -44,7 +44,12 @@ export const createPost = async (req, res) => {
 // Declare and export deletePost to delete a post
 export const deletePost = async (req, res) => {
    
-    const post = await Post.findByIdAndDelete(req.params.id);
+    // Check if post belong to user before deleteing
+    const post = await Post.findByIdAndDelete({
+        id:req.params.id, 
+        user: user_id
+    });
+    
     res.status(200).send("Post has been deleted.");
 
 }
