@@ -11,7 +11,7 @@ import { clerkMiddleware } from "@clerk/express"
 const app = express();
 
 // Use clerkMiddleWare
-app.use(clerkMiddleware);
+app.use(clerkMiddleware());
 
 // Use webhook end point to call webhook router
 app.use("/webhooks", webhookRouter);
@@ -26,6 +26,14 @@ app.use(express.json());
 // app.get("/test", (req,res) => {
 //     res.status(200).send("API is working")
 // })
+
+// test auth-state end point
+app.get("/auth-state", (req, res) => {
+    
+    const authState = req.auth;
+    res.json(authState); 
+
+});
 
 // Use user router to get api
 app.use("/users", userRouter);
