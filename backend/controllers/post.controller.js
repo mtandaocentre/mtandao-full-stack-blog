@@ -1,4 +1,5 @@
 import Post from "../models/post.model.js"
+import User from "../models/user.model.js"
 
 // Declare and export getPosts to fetch many posts
 export const getPosts = async (req, res) => {
@@ -18,8 +19,22 @@ export const getPost = async (req, res) => {
 
 // Declare and export craetePost to create a post
 export const createPost = async (req, res) => {
+
+    // Check for clerkUserId before creating post
+    const clerkUserId = req.auth.userId;
+
+    if(!clerkUserId){
+        res.status(401).json("You cannot create a post before being authenticated");
+    };
+
+    const user = await User.findOne({clerkUserId});
+
+    if(!user){
+        return res.status(404).json("User not found!");
+    };
     
-    const newPost = new Post(req.body);
+    // Create post
+    const newPost = new Post({user:user._id, ...req.body});
    
     const post = await newPost.save();
     res.status(200).send(post);
