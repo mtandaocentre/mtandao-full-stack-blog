@@ -28,10 +28,22 @@ app.use(express.json());
 // })
 
 // test auth-state end point
-app.get("/auth-state", (req, res) => {
+// app.get("/auth-state", (req, res) => {
     
-    const authState = req.auth;
-    res.json(authState); 
+//     const authState = req.auth;
+//     res.json(authState); 
+
+// });
+
+// test protect end-point
+app.get("/protect", (req, res) => {
+    
+    const {userId} = req.auth;
+    if(!userId){
+        return res.status(401).json("Not Authenticated!")
+    }
+
+    res.status(200).json("Thank you for verifying your authentication.")
 
 });
 
