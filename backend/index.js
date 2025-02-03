@@ -4,7 +4,7 @@ import userRouter from "./routes/user.route.js"
 import postRouter from "./routes/post.route.js"
 import commentRouter from "./routes/comment.route.js"
 import webhookRouter from "./routes/webhook.route.js"
-import { clerkMiddleware } from "@clerk/express"
+import { clerkMiddleware, requireAuth } from "@clerk/express"
 
 
 // Create express app/server
@@ -46,6 +46,13 @@ app.get("/protect", (req, res) => {
     res.status(200).json("Thank you for verifying your authentication.")
 
 });
+
+// test protect2 end-point
+// app.get("/protect2", requireAuth(), (req, res) => {
+    
+//     res.status(200).json("Thank you for verifying your authentication.")
+
+// });
 
 // Use user router to get api
 app.use("/users", userRouter);
