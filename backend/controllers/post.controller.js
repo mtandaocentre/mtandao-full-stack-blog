@@ -23,33 +23,63 @@ export const createPost = async (req, res) => {
     // Check for clerkUserId before creating post
     const clerkUserId = req.auth.userId;
 
-    if(!clerkUserId){
-        res.status(401).json("You cannot create a post before being authenticated");
-    };
+    console.log(req.headers);
 
-    const user = await User.findOne({clerkUserId});
+    if (!clerkUserId) {
+        return res.status(401).json("Not authenticated!");
+    }
 
-    if(!user){
+    const user = await User.findOne({ clerkUserId });
+
+    if (!user) {
         return res.status(404).json("User not found!");
-    };
+    }
     
+    // generate slug
+    let slug = req.body.title.replace(/ /g, "-").toLowerCase()
+
+    // check if post exist
+    let existingPost = await Post.findOne({ slug });
+
+    // add counter 
+    let counter = 2;
+
+    // Create counter loop
+    while (existingPost) {
+        slug = `${slug}-${counter}`;
+        existingPost = await Post.findOne({ slug });
+        counter ++;
+    }
+
     // Create post
-    const newPost = new Post({user:user._id, ...req.body});
+    const newPost = new Post({ user: user._id, slug, ...req.body });
    
     const post = await newPost.save();
-    res.status(200).send(post);
+    res.status(200).json(post);
 
 }
 
 // Declare and export deletePost to delete a post
 export const deletePost = async (req, res) => {
    
-    // Check if post belong to user before deleteing
-    const post = await Post.findByIdAndDelete({
-        id:req.params.id, 
-        user: user_id
+    // Check for clerkUserId before creating post
+    const clerkUserId = req.auth.userId;
+ 
+    if (!clerkUserId) {
+        return res.status(401).json("Not authenticated!");
+    }
+ 
+    const user = await User.findOne({ clerkUserId });
+
+    const deletedPost = await Post.findOneAndDelete({
+        _id: req.params.id,
+        user: user._id,
     });
+
+    if (!deletedPost) {
+        return res.status(403).json("You can delete only your posts!");
+    }
     
-    res.status(200).send("Post has been deleted.");
+    res.status(200).json("Post has been deleted");
 
 }
