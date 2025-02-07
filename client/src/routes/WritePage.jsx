@@ -1,11 +1,27 @@
-import { useUser } from "@clerk/clerk-react"
+import { useAuth, useUser } from "@clerk/clerk-react"
 import 'react-quill-new/dist/quill.snow.css';
 import ReactQuill from "react-quill-new";
+import axios from "axios";
 
 const WritePage = () => {
 
   // Check is user is authenticated
   const {isLoaded, isSignedIn} =useUser()
+
+  // Get token 
+  const { getToken } = useAuth()
+
+  // Mutate data using useMutation
+  const mutation = useMutation({
+    mutationFn: async (newPost) => {
+      const token = await getToken();
+      return axios.post('/posts', newPost, {
+        headers:{
+          Authorization: `Bearer: ${token}`,
+        }
+      });
+    },
+  })
 
   if(!isLoaded){
     return <div className="">Loading...</div>
