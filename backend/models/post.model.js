@@ -28,6 +28,12 @@ const postSchema = new Schema({
             unique: true,
         },
 
+         // Category
+         desc: {
+            type: String,
+            default: "general"
+        },
+
         // Description
         desc: {
             type: String,
