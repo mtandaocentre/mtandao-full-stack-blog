@@ -16,8 +16,9 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import {
   QueryClient,
   QueryClientProvider,
-  useQuery,
 } from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const queryClient = new QueryClient()
 
@@ -66,11 +67,13 @@ const router = createBrowserRouter([
 // Wrap app with RouterProvider and parse router
 // Wrap application with clerk provider
 // Add publishable key
+// Add Toast container
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+        <ToastContainer />
       </QueryClientProvider>
     </ClerkProvider> 
   </StrictMode>,
