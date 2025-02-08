@@ -1,24 +1,29 @@
 import { useAuth, useUser } from "@clerk/clerk-react"
 import 'react-quill-new/dist/quill.snow.css';
 import ReactQuill from "react-quill-new";
+import { useMutation } from "@tanstack/react-query"
 import axios from "axios";
+import { useState } from "react";
 
 const WritePage = () => {
 
   // Check is user is authenticated
-  const {isLoaded, isSignedIn} =useUser()
+  const {isLoaded, isSignedIn} =useUser();
+
+  // Create use state for geting content
+  const [value, setValue] = useState("");
 
   // Get token 
-  const { getToken } = useAuth()
+  const { getToken } = useAuth();
 
   // Mutate data using useMutation
   const mutation = useMutation({
     mutationFn: async (newPost) => {
       const token = await getToken();
-      return axios.post('/posts', newPost, {
-        headers:{
-          Authorization: `Bearer: ${token}`,
-        }
+      return axios.post(`${import.meta.env.VITE_API_URL}/posts`, newPost, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
     },
   })
@@ -30,6 +35,25 @@ const WritePage = () => {
   if(isLoaded && !isSignedIn){
     return <div className="">SignIn to Access this page.</div>
   }
+
+  // handle submit function
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = {
+      title: formData.get("title"),
+      category: formData.get("category"),
+      desc: formData.get("desc"),
+      content: value,
+    };
+
+    console.log(data);
+
+    mutation.mutate(data);
+
+  };
 
   return (
     // Style root container
@@ -44,7 +68,8 @@ const WritePage = () => {
       {/* Create form */}
       {/* Style form container */}
       {/* Change actions to classname */}
-      <form className="flex flex-col gap-6 flex-1 mb-6">
+      {/* Fetch data from form  */}
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
         {/* Add button for adding cover image */}
         {/* Style button */}
         <button 
@@ -60,6 +85,7 @@ const WritePage = () => {
           outline-none" 
           type="text" 
           placeholder="My Tech Idea/Story" 
+          name="title"
         />
 
         {/* Create choose category section */}
@@ -67,7 +93,7 @@ const WritePage = () => {
         <div className="flex items-center gap-4">
           <label htmlFor="" className="text-sm">Choose a category:</label>
           <select 
-            name="cat" 
+            name="category" 
             id="" 
             className="p-2 rounded-xl bg-[#a3a3a3] text-[#1b1c1c] 
             shadow-md"
@@ -98,6 +124,8 @@ const WritePage = () => {
         <ReactQuill 
           theme="snow" 
           className="flex-1 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md"
+          value={value} 
+          onChange={setValue}
         />
 
         {/* Add send button */}
