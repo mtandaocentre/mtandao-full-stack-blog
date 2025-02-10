@@ -22,6 +22,14 @@ app.use("/webhooks", webhookRouter);
 // Allow express to send json
 app.use(express.json()); 
 
+// middleware to allow cross-origin requests
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", 
+      "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // test if .env can be accessed
 // console.log(process.env.test)
 
