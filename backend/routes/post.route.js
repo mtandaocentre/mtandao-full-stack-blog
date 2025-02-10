@@ -3,11 +3,15 @@ import {
     getPosts, 
     getPost, 
     createPost,
-    deletePost
+    deletePost,
+    uploadAuth
 } from "../controllers/post.controller.js";
 
 // Define router
 const router = express.Router();
+
+// create upload-auth endpoint and use it to authenticate uploads
+router.delete("/upload-auth", uploadAuth);
 
 // Use router to call api
 // Create get method end point and use getPosts from post.conroller to get posts
