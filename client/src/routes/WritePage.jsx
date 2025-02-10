@@ -120,7 +120,9 @@ const WritePage = () => {
           authenticator={authenticator} 
         >
           <IKUpload
-            fileName="test-upload.png"
+            // use unique file name for files
+            useUniqueFileName
+            // fileName="test-upload.png"
             // onError={onError}
             // onSuccess={onSuccess}
           />
