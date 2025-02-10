@@ -6,6 +6,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
+import { IKContext, IKUpload } from "imagekitio-react"
 
 // Fetch image with authentication
 const authenticator =  async () => {
@@ -103,14 +104,27 @@ const WritePage = () => {
       {/* Change actions to classname */}
       {/* Fetch data from form  */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
+        
         {/* Add button for adding cover image */}
         {/* Style button */}
-        <button 
+        {/* <button 
           className="w-max p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
           bg-[#a3a3a3]"
         >
           Add a cover image
-        </button>
+        </button> */}
+
+        <IKContext 
+          publicKey={import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY} 
+          urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
+          authenticator={authenticator} 
+        >
+          <IKUpload
+            fileName="test-upload.png"
+            // onError={onError}
+            // onSuccess={onSuccess}
+          />
+        </IKContext>
 
         {/* Add title */}
         <input 
