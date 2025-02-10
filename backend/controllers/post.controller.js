@@ -36,7 +36,7 @@ export const createPost = async (req, res) => {
     }
     
     // generate slug
-    let slug = req.body.title.replace(/ /g, "-").toLowerCase()
+    let slug = req.body.title.replace(/ /g, "-").toLowerCase();
 
     // check if post exist
     let existingPost = await Post.findOne({ slug });
@@ -48,7 +48,7 @@ export const createPost = async (req, res) => {
     while (existingPost) {
         slug = `${slug}-${counter}`;
         existingPost = await Post.findOne({ slug });
-        counter ++;
+        counter++;
     }
 
     // Create post
