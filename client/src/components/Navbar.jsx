@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "./Image";
 import { Link } from "react-router-dom";
 import { 
@@ -13,7 +13,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   // Get authentication token from react app using useAuth
-  const{ getToken } = useAuth();
+  const { getToken } = useAuth();
+
+  // Test token using useEffect
+  useEffect(() => {
+    getToken().then((token) => console.log(token));
+  },[])
   
   return (
     /* Format the Navbar container */

@@ -4,6 +4,8 @@ import ReactQuill from "react-quill-new";
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify";
 
 const WritePage = () => {
 
@@ -12,6 +14,9 @@ const WritePage = () => {
 
   // Create use state for geting content
   const [value, setValue] = useState("");
+
+  // Use navigate hook
+  const navigate = useNavigate();
 
   // Get token 
   const { getToken } = useAuth();
@@ -26,7 +31,15 @@ const WritePage = () => {
         },
       });
     },
-  })
+
+    // Use navigate to navigate to new article on success
+    // Add toast for success
+    onSuccess: (res) => {
+      toast.success("Your post has been created!");
+      navigate(`/${res.data.slug}`);
+    },
+
+  });
 
   if(!isLoaded){
     return <div className="">Loading...</div>
@@ -119,23 +132,37 @@ const WritePage = () => {
           className="p-4 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md" 
         />
 
-        {/* Use react Quill to create write page content text area */}
-        {/* Style quill */}
-        <ReactQuill 
-          theme="snow" 
-          className="flex-1 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md"
-          value={value} 
-          onChange={setValue}
-        />
+        {/* Add photo and video emoji */}
+        <div className="flex">
+
+          <div className="flex flex-col gap-2 mr-2 ">
+            <div className="cursor-pointer">🌆</div>
+            <div className="cursor-pointer">▶️</div>
+          </div>
+
+          {/* Use react Quill to create write page content text area */}
+          {/* Style quill */}
+          <ReactQuill 
+            theme="snow" 
+            className="flex-1 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md"
+            value={value} 
+            onChange={setValue}
+          />
+
+        </div>
 
         {/* Add send button */}
         {/* Style send button */}
+        {/* Use mutation on button */}
         <button 
+          disabled = {mutation.isPending}
           className="text-[#1b1c1c] bg-[#a3a3a3] font-medium
-          rounded-xl mt-4 p-2 w-36"
+          rounded-xl mt-4 p-2 w-36 disabled:bg-[#cfcfcf]
+          disabled:cursor-not-allowed"
         >
-          Send
+          {mutation.isPending ? "Loading..." : "Send"}
         </button>
+        { mutation.isError && <span>{mutation.error.message}</span> }
       </form>
     </div>
   )
