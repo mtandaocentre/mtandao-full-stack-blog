@@ -5,10 +5,13 @@ import postRouter from "./routes/post.route.js"
 import commentRouter from "./routes/comment.route.js"
 import webhookRouter from "./routes/webhook.route.js"
 import { clerkMiddleware, requireAuth } from "@clerk/express"
-
+import cors from "cors"
 
 // Create express app/server
 const app = express();
+
+// use cors middlewear to parse cliend url
+app.use(cors(process.env.CLIENT_URL));
 
 // Use clerkMiddleWare
 app.use(clerkMiddleware());
@@ -36,16 +39,16 @@ app.use(express.json());
 // });
 
 // test protect end-point
-app.get("/protect", (req, res) => {
+// app.get("/protect", (req, res) => {
     
-    const {userId} = req.auth;
-    if(!userId){
-        return res.status(401).json("Not Authenticated!")
-    }
+//     const {userId} = req.auth;
+//     if(!userId){
+//         return res.status(401).json("Not Authenticated!");
+//     }
 
-    res.status(200).json("Thank you for verifying your authentication.")
+//     res.status(200).json("Thank you for verifying your authentication.");
 
-});
+// });
 
 // test protect2 end-point
 // app.get("/protect2", requireAuth(), (req, res) => {
