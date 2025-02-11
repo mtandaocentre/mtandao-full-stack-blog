@@ -101,7 +101,7 @@ const WritePage = () => {
   // onSuccess Function
   const onSuccess = (res) =>{
     console.log(res);
-    
+    setCover(res);
   };
 
   return (
