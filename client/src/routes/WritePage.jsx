@@ -36,8 +36,12 @@ const WritePage = () => {
   // Create use state for geting content
   const [value, setValue] = useState("");
 
-   // Create use state for geting cover image
+  // Create use state for geting cover image
   const [cover, setCover] = useState("");
+
+  // Create use state for progress
+  const [progress, setProgress] = useState(0);
+
 
   // Use navigate hook
   const navigate = useNavigate();
@@ -104,6 +108,12 @@ const WritePage = () => {
     setCover(res);
   };
 
+   // onUploadProgress Function
+  const onUploadProgress = (progress) =>{
+    console.log(progress);
+    
+  };
+
   return (
     // Style root container
     <div 
@@ -139,9 +149,13 @@ const WritePage = () => {
             // use unique file name for files
             useUniqueFileName
 
-            //Handle on error and on sucess functions
+            // Handle on error and on sucess functions
             onError={onError}
             onSuccess={onSuccess}
+            
+            // handle onUpload progress
+            onUploadProgress={onUploadProgress}
+
           />
         </IKContext>
 
