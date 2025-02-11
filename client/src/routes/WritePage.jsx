@@ -36,6 +36,9 @@ const WritePage = () => {
   // Create use state for geting content
   const [value, setValue] = useState("");
 
+   // Create use state for geting cover image
+  const [cover, setCover] = useState("");
+
   // Use navigate hook
   const navigate = useNavigate();
 
@@ -93,6 +96,12 @@ const WritePage = () => {
   const onError = (err) =>{
     console.log(err);
     toast.error("Image Upload Failed!");
+  };
+
+  // onSuccess Function
+  const onSuccess = (res) =>{
+    console.log(res);
+    
   };
 
   return (
