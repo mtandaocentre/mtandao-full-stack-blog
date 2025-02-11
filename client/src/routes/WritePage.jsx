@@ -89,6 +89,12 @@ const WritePage = () => {
 
   };
 
+  // onError Function
+  const onError = (err) =>{
+    console.log(err);
+    toast.error("Image Upload Failed!");
+  };
+
   return (
     // Style root container
     <div 
@@ -120,11 +126,13 @@ const WritePage = () => {
           authenticator={authenticator} 
         >
           <IKUpload
+            // fileName="test-upload.png"
             // use unique file name for files
             useUniqueFileName
-            // fileName="test-upload.png"
-            // onError={onError}
-            // onSuccess={onSuccess}
+
+            //Handle on error and on sucess functions
+            onError={onError}
+            onSuccess={onSuccess}
           />
         </IKContext>
 
