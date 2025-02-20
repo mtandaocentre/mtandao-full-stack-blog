@@ -3,30 +3,10 @@ import 'react-quill-new/dist/quill.snow.css';
 import ReactQuill from "react-quill-new";
 import { useMutation } from "@tanstack/react-query"
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify";
-import { IKContext, IKUpload } from "imagekitio-react"
-
-// Fetch image with authentication
-const authenticator =  async () => {
-  try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/posts/upload-auth`
-      );
-
-      if (!response.ok) {
-          const errorText = await response.text();
-          throw new Error(`Request failed with status ${response.status}: ${errorText}`);
-      }
-
-      const data = await response.json();
-      const { signature, expire, token } = data;
-      return { signature, expire, token };
-  } catch (error) {
-      throw new Error(`Authentication request failed: ${error.message}`);
-  }
-};
+import Upload from "../components/Upload";
 
 const WritePage = () => {
 
@@ -39,9 +19,24 @@ const WritePage = () => {
   // Create use state for geting cover image
   const [cover, setCover] = useState("");
 
+  // Create use state for geting content image
+  const [img, setImg] = useState("");
+
+  // Create use state for geting content video
+  const [video, setVideo] = useState("");
+
   // Create use state for progress
   const [progress, setProgress] = useState(0);
 
+  // Create useEffect for adding image
+  useEffect(() => {
+    img && setValue(prev => prev + `<p><image src="${img.url}"/></p>`)
+  },[img])
+
+   // Create useEffect for adding video
+   useEffect(() => {
+    video && setValue(prev => prev + `<p><iframe class="ql-video" src="${video.url}"/></p>`)
+  },[video])
 
   // Use navigate hook
   const navigate = useNavigate();
@@ -84,6 +79,7 @@ const WritePage = () => {
     const formData = new FormData(e.target);
 
     const data = {
+      img: cover.path || "",
       title: formData.get("title"),
       category: formData.get("category"),
       desc: formData.get("desc"),
@@ -94,24 +90,6 @@ const WritePage = () => {
 
     mutation.mutate(data);
 
-  };
-
-  // onError Function
-  const onError = (err) =>{
-    console.log(err);
-    toast.error("Image Upload Failed!");
-  };
-
-  // onSuccess Function
-  const onSuccess = (res) =>{
-    console.log(res);
-    setCover(res);
-  };
-
-   // onUploadProgress Function
-  const onUploadProgress = (progress) =>{
-    console.log(progress);
-    
   };
 
   return (
@@ -129,35 +107,18 @@ const WritePage = () => {
       {/* Change actions to classname */}
       {/* Fetch data from form  */}
       <form onSubmit={handleSubmit} className="flex flex-col gap-6 flex-1 mb-6">
-        
-        {/* Add button for adding cover image */}
-        {/* Style button */}
-        {/* <button 
-          className="w-max p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
-          bg-[#a3a3a3]"
-        >
-          Add a cover image
-        </button> */}
 
-        <IKContext 
-          publicKey={import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY} 
-          urlEndpoint={import.meta.env.VITE_IMAGEKIT_URL_ENDPOINT} 
-          authenticator={authenticator} 
-        >
-          <IKUpload
-            // fileName="test-upload.png"
-            // use unique file name for files
-            useUniqueFileName
-
-            // Handle on error and on sucess functions
-            onError={onError}
-            onSuccess={onSuccess}
-            
-            // handle onUpload progress
-            onUploadProgress={onUploadProgress}
-
-          />
-        </IKContext>
+        {/* Call upload component */}
+        <Upload type="image" setProgress={setProgress} setData={setCover}>
+          {/* Add button for adding cover image */}
+          {/* Style button */}
+          <button 
+            className="w-max p-2 shadow-md rounded-xl text-sm text-[#1b1c1c]
+            bg-[#a3a3a3]"
+          >
+            Add a cover image
+          </button> 
+        </Upload> 
 
         {/* Add title */}
         <input 
@@ -200,11 +161,15 @@ const WritePage = () => {
         />
 
         {/* Add photo and video emoji */}
-        <div className="flex">
+        <div className="flex flex-1">
 
           <div className="flex flex-col gap-2 mr-2 ">
-            <div className="cursor-pointer">🌆</div>
-            <div className="cursor-pointer">▶️</div>
+            <Upload type="image" setProgress={setProgress} setData={setImg}>
+              🌆
+            </Upload> 
+            <Upload type="video" setProgress={setProgress} setData={setVideo}>
+              ▶️
+            </Upload> 
           </div>
 
           {/* Use react Quill to create write page content text area */}
@@ -214,6 +179,7 @@ const WritePage = () => {
             className="flex-1 rounded-xl bg-[#e0e0e0] text-[#1b1c1c] shadow-md"
             value={value} 
             onChange={setValue}
+            readOnly={0 < progress && progress < 100}
           />
 
         </div>
@@ -222,13 +188,15 @@ const WritePage = () => {
         {/* Style send button */}
         {/* Use mutation on button */}
         <button 
-          disabled = {mutation.isPending}
+          disabled = {mutation.isPending || (0 < progress && progress < 100)}
           className="text-[#1b1c1c] bg-[#a3a3a3] font-medium
           rounded-xl mt-4 p-2 w-36 disabled:bg-[#cfcfcf]
           disabled:cursor-not-allowed"
         >
           {mutation.isPending ? "Loading..." : "Send"}
         </button>
+        {/* progress button */}
+        {"Progress:" + progress}
         { mutation.isError && <span>{mutation.error.message}</span> }
       </form>
     </div>
