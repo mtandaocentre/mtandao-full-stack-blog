@@ -24,9 +24,12 @@ const PostList = () => {
   } = useInfiniteQuery({
     queryKey: ['posts'],
     queryFn: ({ pageParam = 1 }) => fetchPosts(pageParam),
-    initialPageParam: 0,
-    getNextPageParam: (lastPage, pages) => lastPage.nextCursor,
-  })
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, pages) => 
+      lastPage.hasMore ? pages.length + 1 : undefined,
+  });
+
+  console.log(data)
 
   if (isFetching) return 'Loading...'
 
