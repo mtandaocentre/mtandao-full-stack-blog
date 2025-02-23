@@ -30,13 +30,14 @@ const Upload = ({ children, type, setProgress, setData }) => {
     // onError Function
   const onError = (err) =>{
     console.log(err);
-    toast.error("Image Upload Failed!");
+    toast.error("Media Upload Failed!");
   };
 
   // onSuccess Function
   const onSuccess = (res) =>{
     console.log(res);
     setData(res);
+    toast.success("Media Upload was Successful!");
   };
 
     // onUploadProgress Function
