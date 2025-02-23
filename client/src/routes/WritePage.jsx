@@ -197,7 +197,7 @@ const WritePage = () => {
         </button>
         {/* progress button */}
         {"Progress:" + progress}
-        { mutation.isError && <span>{mutation.error.message}</span> }
+        {/* { mutation.isError && <span>{mutation.error.message}</span> } */}
       </form>
     </div>
   )
