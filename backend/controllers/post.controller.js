@@ -4,9 +4,20 @@ import User from "../models/user.model.js"
 
 // Declare and export getPosts to fetch many posts
 export const getPosts = async (req, res) => {
+
+    // Define page and limit
+    const page = parseInt(req.query.page) || 1
+    const limit = parseInt(req.query.limit) || 2
     
-    const posts = await Post.find();
-    res.status(200).send(posts);
+    // use page and limit to calculate posts, totalPost and hasMore
+    const posts = await Post.find()
+        .limit()
+        .skip((page - 1) * limit);
+
+    const totalPosts = await Post.countDocuments();
+    const hasMore = page * limit < totalPosts;
+
+    res.status(200).send({ posts, hasMore} );
 
 }
 
