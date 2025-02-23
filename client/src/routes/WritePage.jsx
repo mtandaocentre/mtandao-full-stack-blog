@@ -79,7 +79,7 @@ const WritePage = () => {
     const formData = new FormData(e.target);
 
     const data = {
-      img: cover.path || "",
+      img: cover.filePath || "",
       title: formData.get("title"),
       category: formData.get("category"),
       desc: formData.get("desc"),
