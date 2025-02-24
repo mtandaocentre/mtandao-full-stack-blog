@@ -11,6 +11,7 @@ export const getPosts = async (req, res) => {
     
     // use page and limit to calculate posts, totalPost and hasMore
     const posts = await Post.find()
+        .populate("user", "username")
         .limit()
         .skip((page - 1) * limit);
 
