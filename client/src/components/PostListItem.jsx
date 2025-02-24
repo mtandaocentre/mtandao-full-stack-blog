@@ -31,7 +31,7 @@ const PostListItem = ({post}) => {
                 <span>Written by</span>
                 <Link className="text-[#e0e0e0] font-bold">Mr. Mtandao</Link>
                 <span>on</span>
-                <Link className="text-[#e0e0e0] font-bold">Hardware</Link>
+                <Link className="text-[#e0e0e0] font-bold">{post.category}</Link>
                 <span>{format(post.createdAt)}</span>
             </div>
 
