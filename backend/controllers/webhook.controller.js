@@ -1,6 +1,6 @@
-import User from "../models/user.model.js"
-import Post from "../models/post.model.js"
-import Comment from "../models/comment.model.js"
+import User from "../models/user.model.js";
+import Post from "../models/post.model.js";
+import Comment from "../models/comment.model.js";
 import { Webhook } from "svix";
 
 // Create clerkWebhook
@@ -11,7 +11,7 @@ export const clerkWebHook = async (req, res) => {
 
     // If it doesnt exist throw an error
     if (!WEBHOOK_SECRET) {
-        throw new Error("Webhook secret needed!")
+        throw new Error("Webhook secret needed!");
     }
 
     // make verification
@@ -24,39 +24,36 @@ export const clerkWebHook = async (req, res) => {
         evt = wh.verify(payload, headers);
     } catch (err) {
         res.status(400).json({
-            message: "Webhook verification failed!"
+        message: "Webhook verification failed!",
         });
     }
 
     // console.log(evt.data);
 
     // Add user created data to database
-    if (evt.type === 'user.created') {
-        
+    if (evt.type === "user.created") {
         const newUser = new User({
-            clerkUserId: evt.data.id,
-            username: evt.data.username || evt.data.email_addresses[0].email_address,
-            email: evt.data.email_addresses[0].email_address,
-            img: evt.data.profile_img_url
+          clerkUserId: evt.data.id,
+          username: evt.data.username || evt.data.email_addresses[0].email_address,
+          email: evt.data.email_addresses[0].email_address,
+          img: evt.data.profile_img_url,
         });
-
-        await newUser.save()
-    };
+    
+        await newUser.save();
+    }
 
     // Delete user created data from database
     if (evt.type === "user.deleted") {
-
         const deletedUser = await User.findOneAndDelete({
           clerkUserId: evt.data.id,
         });
     
         await Post.deleteMany({user:deletedUser._id})
         await Comment.deleteMany({user:deletedUser._id})
-        
-    }
-
-    return res.status(200).json({
-        message:"webhook received",
+      }
+    
+      return res.status(200).json({
+        message: "Webhook received",
     });
 
 };
