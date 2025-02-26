@@ -25,7 +25,10 @@ export const getPosts = async (req, res) => {
 // Declare and export getPost to fetch single post
 export const getPost = async (req, res) => {
     
-    const post = await Post.findOne({ slug: req.params.slug });
+    const post = await Post.findOne({ slug: req.params.slug }).populate(
+        "user",
+        "username img"
+    );
     res.status(200).send(post);
 
 }
