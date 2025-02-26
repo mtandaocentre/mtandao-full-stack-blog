@@ -6,19 +6,19 @@ import User from "../models/user.model.js"
 export const getPosts = async (req, res) => {
 
     // Define page and limit
-    const page = parseInt(req.query.page) || 1
-    const limit = parseInt(req.query.limit) || 2
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 2;
     
     // use page and limit to calculate posts, totalPost and hasMore
     const posts = await Post.find()
         .populate("user", "username")
-        .limit()
+        .limit(limit)
         .skip((page - 1) * limit);
 
     const totalPosts = await Post.countDocuments();
     const hasMore = page * limit < totalPosts;
 
-    res.status(200).send({ posts, hasMore} );
+    res.status(200).send({ posts, hasMore});
 
 }
 
