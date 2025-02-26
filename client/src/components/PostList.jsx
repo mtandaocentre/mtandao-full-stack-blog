@@ -23,7 +23,7 @@ const PostList = () => {
     isFetchingNextPage,
     status,
   } = useInfiniteQuery({
-    queryKey: ['posts'],
+    queryKey: ["posts"],
     queryFn: ({ pageParam = 1 }) => fetchPosts(pageParam),
     initialPageParam: 1,
     getNextPageParam: (lastPage, pages) => 
@@ -39,8 +39,6 @@ const PostList = () => {
   // convert allPosts into a single array using flatMap
   const allPosts = data?.pages?.flatMap((page) => page.posts) || [];
 
-  
-
   console.log(data)
 
   return (
@@ -48,23 +46,23 @@ const PostList = () => {
        - Add more post list items to post list
     */
 
-      <InfiniteScroll
-       dataLength={allPosts.length} 
-       next={fetchNextPage}
-       hasMore={!!hasNextPage}
-       loader={<h4>Loading more posts...</h4>}
-       endMessage={
-         <p>
-           <b>All posts loaded!</b>
-         </p>
-       }
-      >
-        {/* Add PostListItem component to PostList */}
-        {/* Use  allPosts array to map postListItems */}
-        {allPosts.map((post) => (
-          <PostListItem key={post._id} post={post} />
-        ))}
-      </InfiniteScroll>
+    <InfiniteScroll
+      dataLength={allPosts.length} 
+      next={fetchNextPage}
+      hasMore={!!hasNextPage}
+      loader={<h4>Loading more posts...</h4>}
+      endMessage={
+        <p>
+          <b>All posts loaded!</b>
+        </p>
+      }
+    >
+      {/* Add PostListItem component to PostList */}
+      {/* Use  allPosts array to map postListItems */}
+      {allPosts.map((post) => (
+        <PostListItem key={post._id} post={post} />
+      ))}
+    </InfiniteScroll>
 
   )
 }
