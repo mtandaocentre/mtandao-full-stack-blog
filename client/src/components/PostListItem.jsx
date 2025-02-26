@@ -11,12 +11,14 @@ const PostListItem = ({post}) => {
     <div className='flex flex-col xl:flex-row gap-8 mb-12'>
         {/* Image */}
         {/* Add and style PostListItem image */}
-        {post.img && <div className="md:hidden xl:block xl:w-1/3">
-            <Image 
-                src={post.img}
-                className="rounded-2xl object-cover" w="735"
-            />
-        </div>}
+        {post.img && (
+            <div className="md:hidden xl:block xl:w-1/3">
+                <Image 
+                    src={post.img}
+                    className="rounded-2xl object-cover" w="735"
+                />
+            </div>
+        )}
 
         {/* Details */}
         {/* - Add title and by line
@@ -29,7 +31,7 @@ const PostListItem = ({post}) => {
             
             <div className="flex items-center gap-2 text-[#e0e0e0]">
                 <span>Written by</span>
-                <Link className="text-[#e0e0e0] font-bold">Mr. Mtandao</Link>
+                <Link className="text-[#e0e0e0] font-bold">{post.user.username}</Link>
                 <span>on</span>
                 <Link className="text-[#e0e0e0] font-bold">{post.category}</Link>
                 <span>{format(post.createdAt)}</span>
@@ -39,9 +41,7 @@ const PostListItem = ({post}) => {
                 {post.desc}
             </p>
 
-            <Link to={`/${post.slug}`} 
-                className="underline text-[#e0e0e0] font-bold text-sm"
-            >
+            <Link to={`/${post.slug}`} className="underline text-[#e0e0e0] font-bold text-sm">
                 Read More
             </Link>
         </div>
