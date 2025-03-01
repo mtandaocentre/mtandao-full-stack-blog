@@ -1,10 +1,31 @@
-import Image from "../components/Image"
-import { Link } from "react-router-dom"
-import PostMenuAction from "../components/PostMenuAction"
-import Search from "../components/Search"
-import Comments from "../components/Comments"
+import Image from "../components/Image";
+import { Link, useParams } from "react-router-dom";
+import PostMenuAction from "../components/PostMenuAction";
+import Search from "../components/Search";
+import Comments from "../components/Comments";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { format } from "timeago.js";
+import parse from "html-react-parser"
+
+const fetchPosts = async (slug) => {
+  const res = await axios.get(`${import.meta.env.VITE_API_URL}/posts/${slug}`);
+  return res.data;
+};
 
 const SinglePostPage = () => {
+
+  const {slug} = useParams();
+
+  const { isPending, error, data } = useQuery({
+      queryKey: ["posts", slug],
+      queryFn: () => fetchPosts(slug),
+  });
+
+  if (isPending) return "Loading..."
+  if (error) return "Something went wrong!" + error.message
+  if (!data) return "Post not found!"
+
   return (
     /* Style single post page container */
     <div className='flex flex-col gap-8'>
@@ -21,7 +42,7 @@ const SinglePostPage = () => {
           <h1 
             className="text-xl md:text-3xl xl:text-4xl 2xl:text-5xl font-bold"
           >
-            Your online place for everything computer
+            {data.title}
           </h1>
 
           {/* - Add details container
@@ -29,20 +50,16 @@ const SinglePostPage = () => {
           */}
           <div className="flex items-center gap-2 text-[#e0e0e0] text-sm">
             <span>Written by</span>
-            <Link className="text-[#e0e0e0] font-semibold">Mr. Mtandao</Link>
+            <Link className="text-[#e0e0e0] font-semibold">{data.user.username}</Link>
             <span>on</span>
-            <Link className="text-[#e0e0e0] font-semibold">Hardware</Link>
-            <span>2 days ago</span>
+            <Link className="text-[#e0e0e0] font-semibold">{data.category}</Link>
+            <span>{format(data.createdAt)}</span>
           </div>
 
           {/* - Add and style description 
               - made description short */}
           <p className="text-[#e0e0e0] font-medium">
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. 
+            {data.desc}
           </p>
 
         </div>
@@ -51,13 +68,13 @@ const SinglePostPage = () => {
         {/* - Add and style Image component
             - Add width and rounding to image
         */}
-        <div className="hidden lg:block w-2/5">
+        {data.img && <div className="hidden lg:block w-2/5">
           <Image 
-            src="postImg.jpeg" 
+            src={data.img}
             w="600" 
             className="rounded-2xl" 
           />
-        </div>
+        </div>}
 
       </div>
 
@@ -70,78 +87,7 @@ const SinglePostPage = () => {
         {/* Text */}
         {/* Add and style content text */}
         <div className="lg:text-lg flex flex-col gap-6 text-justify">
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>  
-            Lorem Ipsum is simply dummy text of the printing and 
-            typesetting industry. Lorem Ipsum has been the industrys 
-            standard dummy text ever since the 1500s, when an unknown 
-            printer took a galley of type and scrambled it to make a 
-            type specimen book. It has survived not only five centuries, 
-            but also the leap into electronic typesetting, remaining 
-            essentially unchanged. It was popularised in the 1960s with 
-            the release of Letraset sheets containing Lorem Ipsum 
-            passages, and more recently with desktop publishing software 
-            like Aldus PageMaker including versions of Lorem Ipsum.
-          </p>
+            {parse(data.content)}
         </div>
 
         {/* Menu */}
@@ -157,16 +103,16 @@ const SinglePostPage = () => {
               {/* - Add and style image 
               - Style image author name and description */}
               <div className="flex items-center gap-8">
-                <Image 
-                  src="userImg.png" 
+                {data.user.img && <Image 
+                  src={data.user.img} 
                   className="w-12 h-12 rounded-full object-cover"
                   w="48"
                   h="48"
-                />
+                />}
                 {/* - Add user name and description 
                     - Styled Authosr name 
                 */}
-                <Link className="font-bold">Mr. Mtandao</Link>
+                <Link className="font-bold">{data.user.username}</Link>
               </div>
 
               {/* - Description 
