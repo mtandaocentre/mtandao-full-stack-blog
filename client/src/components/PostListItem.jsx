@@ -1,5 +1,6 @@
+import { useQuery } from "@tanstack/react-query"
 import Image from "./Image"
-import { Link } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { format } from "timeago.js"
 
 const PostListItem = ({post}) => {
@@ -32,9 +33,8 @@ const PostListItem = ({post}) => {
             <div className="flex items-center gap-2 text-[#e0e0e0]">
                 <span>Written by</span>
                 <Link className="text-[#e0e0e0] font-bold">{post.user.username}</Link>
-                <span>on</span>
-                <Link className="text-[#e0e0e0] font-bold">{post.category}</Link>
                 <span>{format(post.createdAt)}</span>
+                <Link className="text-[#e0e0e0] font-bold">{post.category}</Link>
             </div>
 
             <p>
