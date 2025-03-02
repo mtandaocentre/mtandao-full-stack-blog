@@ -168,7 +168,7 @@ const SinglePostPage = () => {
       </div>
       {/* Comments*/}
       {/* Add comments component */}
-      <Comments />
+      <Comments postId={data._id}/>
     </div>
   )
 }
